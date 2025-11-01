@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://drills.vn/wp-content/uploads/2025/10/IELTS-DRILLS-CIRCLE.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IELTS Drills | Your Personal AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-red': 'var(--brand-red)',
+              'brand-yellow': 'var(--brand-yellow)',
+              'brand-black': 'var(--brand-black)',
+              'brand-gray': 'var(--brand-gray)',
+            },
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+            },
+            boxShadow: {
+              'soft': '0 4px 12px rgba(0, 0, 0, 0.05)',
+              'medium': '0 10px 30px rgba(0, 0, 0, 0.07)',
+              'large': '0 20px 50px rgba(0, 0, 0, 0.1)',
+            },
+            borderRadius: {
+              '2xl': '1rem',
+              '3xl': '1.5rem',
+              '4xl': '2rem',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --brand-red: #D8292E;
+        --brand-yellow: #FDE047;
+        --brand-black: #1a1a1a; /* Darker for better contrast */
+        --brand-gray: #f9fafb; /* Lighter gray */
+      }
+      body {
+        background-color: var(--brand-gray);
+        font-family: 'Manrope', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .hero-gradient-bg {
+        background: linear-gradient(-45deg, #D8292E, #6b0c0e, #1a1a1a, #333333);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        position: relative;
+      }
+      .noise-overlay::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXVpaWlghIWIiIiPj4+AgIBsbGxiYmK+vr7BwcGfn5+UlJSbm5uZmZl+fn54eHh3d3e8vLzExMTY2Njp6elxaSrAAAAABXRSTlMAAAAAAMJrBrEAAADTSURBVDjL7ZTLFsMgCIPlDfd//+2pSgPlA9x+s887iBAg6c0nEBSRsm2BvH8A0Apt2gAAIBoGfM0wQAZASiHw3EAUT4SOpAZQNQO8A0I2AFQjQAfgjgaAMwJ6AUI3gAwBfS0gFAEYkpANwJmBfAMiKQBWCvgaQNwLzGrCAeAUkGMAXiDAjAAeAywGgFYFnAWA0AlwWgJwWgJ4WgJkWQPKbQDMAzdkAVgCwLUDMAdwTQO8AjQ1QoI9BNQOoDkCciPAbwb8W/sfACp3Q+Q3sP8AAAAASUVORK5CYII=');
+        opacity: 0.05;
+        pointer-events: none;
+      }
+
+      @keyframes fade-in-down {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .animate-fade-in-down {
+        animation: fade-in-down 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        will-change: transform;
+        z-index: 0;
+      }
+
+      @keyframes blob-animate-1 {
+        0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        25% { transform: translate(20px, -30px) scale(1.1) rotate(15deg); }
+        50% { transform: translate(-10px, 15px) scale(0.9) rotate(-10deg); }
+        75% { transform: translate(15px, 25px) scale(1.05) rotate(5deg); }
+      }
+
+      @keyframes blob-animate-2 {
+        0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        25% { transform: translate(-25px, 10px) scale(0.95) rotate(-10deg); }
+        50% { transform: translate(20px, -20px) scale(1.1) rotate(10deg); }
+        75% { transform: translate(-15px, -10px) scale(1) rotate(5deg); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
