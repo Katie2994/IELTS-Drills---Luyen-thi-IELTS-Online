@@ -38,16 +38,19 @@ const VideoSection = () => {
     };
 
     return (
-        <section id="video-demo" ref={sectionRef} className="py-24 bg-white">
+        <section id="video-demo" ref={sectionRef} className="py-28 bg-white">
             <div className="container mx-auto px-6">
                 <div 
                     className={`text-center mb-16 transition-all duration-700 ease-out ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                     }`}
                 >
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-black">Trải Nghiệm Nền Tảng Trực Quan</h2>
-                    <p className="text-base sm:text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-                        Xem cách các công cụ của chúng tôi hoạt động và giúp bạn tăng tốc hành trình chinh phục IELTS.
+                    <p className="text-lg sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-brand-black to-gray-500 mb-6 max-w-2xl mx-auto">
+                        Nếu bạn vẫn còn phân vân, hãy xem video dưới đây để thấy Trợ lý AI của chúng tôi làm được những gì.
+                    </p>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">AI Chấm Bài Writing Chỉ Trong Vài Giây</h2>
+                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-2xl mx-auto">
+                        Xem demo cách Trợ lý AI của chúng tôi phân tích, chấm điểm và đưa ra gợi ý chi tiết để bạn nâng band điểm Writing một cách đột phá.
                     </p>
                 </div>
                 <div 
@@ -59,14 +62,14 @@ const VideoSection = () => {
                         <video
                             ref={videoRef}
                             className="w-full h-full"
-                            src={isVisible ? "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" : undefined}
+                            src={isVisible ? "http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-Submit-Writing-Task-2-final.mp4" : undefined}
                             poster="https://images.unsplash.com/photo-1554415707-6e8cf603245d?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             controls={isPlaying}
                             onPlay={() => setIsPlaying(true)}
                             onPause={() => setIsPlaying(false)}
                             onEnded={() => setIsPlaying(false)}
                             playsInline
-                            preload="none"
+                            preload="metadata"
                         >
                             Trình duyệt của bạn không hỗ trợ thẻ video.
                         </video>

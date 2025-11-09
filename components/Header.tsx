@@ -9,16 +9,25 @@ const Header = () => {
 
   const navLinks = [
     { name: 'Tính năng', href: '#features' },
+    { name: 'Kho đề', href: '#speaking-topics' },
     { name: 'Demo', href: '#video-demo' },
     { name: 'Học viên', href: '#testimonials' },
     { name: 'Bảng giá', href: '#pricing' },
   ];
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <header className="bg-white/70 backdrop-blur-xl sticky top-0 z-50 border-b border-gray-200/60 shadow-soft">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="https://ieltsdrills.com/" aria-label="IELTS Drills Home">
+          <a href="#" onClick={handleLogoClick} aria-label="IELTS Drills Home">
             <Logo />
           </a>
           

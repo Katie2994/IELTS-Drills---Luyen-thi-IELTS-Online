@@ -4,7 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="https://drills.vn/wp-content/uploads/2025/10/IELTS-DRILLS-CIRCLE.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IELTS Drills | Your Personal AI Assistant</title>
+    <title>IELTS Drills | Luyện thi IELTS Online cùng Trợ lý AI</title>
+
+    <!-- Preload the first slider image for faster loading -->
+    <link rel="preload" as="image" href="http://drills.vn/wp-content/uploads/2025/11/7.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Nâng band IELTS đột phá cùng IELTS Drills. Luyện thi Writing & Speaking với AI, kho đề thi thử khổng lồ và lộ trình học cá nhân hoá. Bắt đầu miễn phí ngay!" />
+    <meta name="keywords" content="luyện thi IELTS, IELTS online, thi thử IELTS, AI chấm bài IELTS, IELTS Writing, IELTS Speaking, nâng band IELTS, học IELTS, IELTS Drills, trợ lý AI IELTS" />
+    <meta name="author" content="IELTS Drills" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ieltsdrills.com/" />
+    <meta property="og:title" content="IELTS Drills | Luyện thi IELTS Online cùng Trợ lý AI" />
+    <meta property="og:description" content="Nâng band IELTS đột phá cùng IELTS Drills. Luyện thi Writing & Speaking với AI, kho đề thi thử khổng lồ và lộ trình học cá nhân hoá. Bắt đầu miễn phí ngay!" />
+    <meta property="og:image" content="http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-OG-Image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ieltsdrills.com/" />
+    <meta property="twitter:title" content="IELTS Drills | Luyện thi IELTS Online cùng Trợ lý AI" />
+    <meta property="twitter:description" content="Nâng band IELTS đột phá cùng IELTS Drills. Luyện thi Writing & Speaking với AI, kho đề thi thử khổng lồ và lộ trình học cá nhân hoá. Bắt đầu miễn phí ngay!" />
+    <meta property="twitter:image" content="http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-OG-Image.png" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,6 +131,19 @@
         50% { transform: translate(20px, -20px) scale(1.1) rotate(10deg); }
         75% { transform: translate(-15px, -10px) scale(1) rotate(5deg); }
       }
+
+      @keyframes float-1 {
+        0%, 100% { transform: translateY(0px) rotate(-3deg); }
+        50% { transform: translateY(-15px) rotate(3deg); }
+      }
+
+      @keyframes float-2 {
+          0%, 100% { transform: translateY(0px) rotate(2deg); }
+          50% { transform: translateY(-12px) rotate(-2deg); }
+      }
+      .animate-float-1 { animation: float-1 6s ease-in-out infinite; }
+      .animate-float-2 { animation: float-2 8s ease-in-out infinite; }
+
     </style>
   <script type="importmap">
 {

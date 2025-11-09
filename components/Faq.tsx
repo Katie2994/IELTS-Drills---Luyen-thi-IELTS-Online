@@ -88,7 +88,7 @@ const Faq = () => {
     ];
 
     return (
-        <section id="faq" className="py-24 bg-brand-gray">
+        <section id="faq" className="py-28 bg-brand-gray">
             <div className="container mx-auto px-6 max-w-3xl">
                 <div 
                     ref={titleRef}
@@ -96,8 +96,8 @@ const Faq = () => {
                         titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                     }`}
                 >
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-black">Câu Hỏi Thường Gặp</h2>
-                    <p className="text-base sm:text-lg text-gray-600 mt-4">Bạn có câu hỏi? Chúng tôi có câu trả lời.</p>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">Câu Hỏi Thường Gặp</h2>
+                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8">Bạn có câu hỏi? Chúng tôi có câu trả lời.</p>
                 </div>
                 <div>
                     {faqData.map((item, index) => (

@@ -39,7 +39,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, price, period, features
             {isPopular && <span className="bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase self-center -mt-11 mb-4">Phổ biến nhất</span>}
             <h3 className="text-2xl font-bold text-center text-gray-900">{plan}</h3>
             <div className="text-center my-6">
-                <span className="text-5xl font-extrabold text-gray-900">{price}</span>
+                <span className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-yellow-400">{price}</span>
                 <span className="text-gray-600">{period}</span>
             </div>
             <ul className="space-y-4 mb-8 flex-grow text-gray-700">
@@ -100,16 +100,16 @@ const Pricing = () => {
     ];
 
     return (
-        <section id="pricing" className="py-24 bg-brand-gray">
+        <section id="pricing" className="py-28 bg-brand-gray">
             <div className="container mx-auto px-6">
                 <div 
                     ref={titleRef}
-                    className={`text-center mb-20 transition-all duration-700 ease-out ${
+                    className={`text-center mb-24 transition-all duration-700 ease-out ${
                         titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                     }`}
                 >
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-black">Chọn Gói Học Phù Hợp Với Bạn</h2>
-                    <p className="text-base sm:text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Bắt đầu miễn phí, hoặc khai phá toàn bộ tiềm năng với các gói học cao cấp.</p>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">Chọn Gói Học Phù Hợp Với Bạn</h2>
+                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-2xl mx-auto">Bắt đầu miễn phí, hoặc khai phá toàn bộ tiềm năng với các gói học cao cấp.</p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-16 lg:gap-8 max-w-5xl mx-auto items-center">
                     {plans.map((p, i) => <PricingCard key={i} {...p} delay={i * 150} />)}

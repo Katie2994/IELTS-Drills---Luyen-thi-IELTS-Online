@@ -112,11 +112,11 @@ const LevelChecker = () => {
   const result = getResult(score);
 
   return (
-    <section id="level-checker" ref={sectionRef} className="py-24 bg-white">
+    <section id="level-checker" ref={sectionRef} className="py-28 bg-white">
       <div className="container mx-auto px-6">
         <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-black">Bạn Đã Sẵn Sàng Cho IELTS?</h2>
-          <p className="text-base sm:text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">Bạn Đã Sẵn Sàng Cho IELTS?</h2>
+          <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-2xl mx-auto">
             Kiểm tra nhanh trình độ của bạn để nhận lộ trình học được cá nhân hoá.
           </p>
         </div>
@@ -145,12 +145,12 @@ const LevelChecker = () => {
               </div>
             </div>
           ) : (
-            <div className="text-center animate-fade-in-up">
-              <h3 className="text-2xl font-bold text-brand-black">Kết quả của bạn</h3>
-              <p className="text-5xl font-extrabold my-4 text-brand-red">{result.level}</p>
-              <p className="text-gray-600 max-w-md mx-auto mb-8">{result.description}</p>
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-brand-black opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>Kết quả của bạn</h3>
+              <p className="text-5xl font-extrabold my-4 text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-yellow-400 opacity-0 animate-fade-in-up" style={{ animationDelay: '250ms' }}>{result.level}</p>
+              <p className="text-gray-600 max-w-md mx-auto mb-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '400ms' }}>{result.description}</p>
               
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200 opacity-0 animate-fade-in-up" style={{ animationDelay: '550ms' }}>
                 <p className="font-bold text-lg text-gray-900">Gói học đề xuất</p>
                 <p className="text-3xl font-bold my-2">{result.plan}</p>
                 <a href="#pricing" className="bg-brand-red text-white font-bold py-3 px-8 rounded-xl text-lg hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block mt-4">
@@ -158,7 +158,7 @@ const LevelChecker = () => {
                 </a>
               </div>
               
-              <button onClick={restartQuiz} className="mt-8 text-gray-600 hover:text-brand-black font-semibold transition-colors">Làm lại bài kiểm tra</button>
+              <button onClick={restartQuiz} className="mt-8 text-gray-600 hover:text-brand-black font-semibold transition-colors opacity-0 animate-fade-in-up" style={{ animationDelay: '700ms' }}>Làm lại bài kiểm tra</button>
             </div>
           )}
         </div>

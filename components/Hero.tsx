@@ -30,7 +30,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="relative hero-gradient-bg text-white overflow-hidden">
+        <section className="relative hero-gradient-bg text-white overflow-hidden z-10">
             {/* Decorative Blobs */}
             <div 
                 aria-hidden="true" 
@@ -46,10 +46,10 @@ const Hero = () => {
             <div className="noise-overlay"></div>
             <div ref={contentRef} className="container mx-auto px-6 py-24 sm:py-32 text-center relative z-10 will-change-transform">
                 
-                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight animate-fade-in-down text-white drop-shadow-sm">
-                    Từ <span className="text-brand-red">6.5</span> lên <span className="text-yellow-400">8.0 Writing</span> trong 3 tháng
+                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight animate-fade-in-down text-white drop-shadow-sm">
+                    Từ <span className="text-yellow-400">6.5</span> lên <span className="text-yellow-400">8.0</span> Writing trong 3 tháng
                 </h1>
-                <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 animate-fade-in-up" style={{animationDelay: '150ms'}}>
+                <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 leading-relaxed animate-fade-in-up" style={{animationDelay: '150ms'}}>
                     Câu chuyện của An Nguyễn không phải là phép màu. Đó là kết quả của phương pháp học thông minh với sự đồng hành từ Trợ lý AI của IELTS Drills.
                 </p>
 
@@ -57,7 +57,7 @@ const Hero = () => {
                     {/* Before Card */}
                     <div className="w-full max-w-sm bg-white/10 backdrop-blur-2xl rounded-3xl p-8 border border-white/20 shadow-large text-left transform transition-transform duration-500 hover:scale-105">
                         <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">Lúc trước</p>
-                        <p className="text-5xl font-bold my-4 text-gray-100">Writing 6.5</p>
+                        <p className="text-5xl font-bold my-4 text-gray-100">Writing <span className="text-yellow-400">6.5</span></p>
                         <p className="text-gray-300">"Mình loay hoay không biết cải thiện bài viết thế nào, ý tưởng thì nghèo nàn, ngữ pháp lặp lại và không biết mình sai ở đâu."</p>
                     </div>
 
@@ -72,7 +72,7 @@ const Hero = () => {
                             <p className="text-sm font-semibold uppercase tracking-wider text-yellow-300">Sau khi dùng IELTS Drills</p>
                             <StarIcon />
                         </div>
-                        <p className="text-5xl font-bold my-4 text-white">Writing 8.0</p>
+                        <p className="text-5xl font-bold my-4 text-white">Writing <span className="text-yellow-400">8.0</span></p>
                         <p className="text-gray-200">"AI chỉ ra từng lỗi nhỏ, gợi ý ý tưởng và cấu trúc logic. Mình tự tin hơn hẳn, bài viết rành mạch và đạt điểm số ngoài mong đợi!"</p>
                     </div>
                 </div>
