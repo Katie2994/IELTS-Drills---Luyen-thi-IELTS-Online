@@ -164,13 +164,6 @@ const Features = () => {
             description: 'Làm quen áp lực thi thật và luyện từ vựng chuyên sâu ngay khi làm bài Reading & Listening.',
             videoSrc: 'http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-Reading-0911.mp4',
             posterSrc: 'http://drills.vn/wp-content/uploads/2025/11/4-1.png'
-        },
-        {
-            icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 16 16">
-                    <path fillRule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5z"/>
-                </svg>,
-            title: 'Sơ Đồ Tư Duy & Lộ Trình Học AI',
-            description: 'AI tự động phác thảo dàn ý thông minh và phân tích điểm yếu để đề xuất lộ trình học cá nhân hoá.'
         }
     ];
 
@@ -188,7 +181,7 @@ const Features = () => {
                         IELTS Drills kết hợp công nghệ AI tiên tiến và phương pháp học hiện đại để giúp bạn chinh phục mục tiêu.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {featureList.map((feature, index) => (
                         <FeatureCard 
                             key={index} 

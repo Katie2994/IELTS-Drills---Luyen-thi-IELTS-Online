@@ -110,6 +110,20 @@
         animation: fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
       }
 
+      @keyframes slide-in-bottom {
+        0% {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .animate-slide-in-bottom {
+        animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      }
+
       .blob {
         position: absolute;
         border-radius: 50%;
@@ -143,6 +157,22 @@
       }
       .animate-float-1 { animation: float-1 6s ease-in-out infinite; }
       .animate-float-2 { animation: float-2 8s ease-in-out infinite; }
+
+      @keyframes wave-in {
+        from {
+          transform: translateY(100%) scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+      .animate-wave-in {
+          display: inline-block;
+          opacity: 0;
+          animation: wave-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
 
     </style>
   <script type="importmap">

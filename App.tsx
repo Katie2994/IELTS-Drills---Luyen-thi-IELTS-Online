@@ -8,6 +8,8 @@ import VideoSection from './components/VideoSection';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import Faq from './components/Faq';
+import ReadingPractice from './components/ReadingPractice';
+import ListeningPractice from './components/ListeningPractice';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import SpeakingTopics from './components/SpeakingTopics';
@@ -23,6 +25,8 @@ function App() {
         <Hero />
         <SocialProof />
         <Features />
+        <ReadingPractice />
+        <ListeningPractice />
         <Methodology />
         <SpeakingTopics />
         <CaseStudy />

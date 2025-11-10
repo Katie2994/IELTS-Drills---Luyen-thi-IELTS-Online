@@ -26,7 +26,7 @@ const FloatingIcon = ({ icon, className, delay = 0 }: { icon: React.ReactNode, c
 };
 
 const NewTiktokIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 256 256" className="h-12 w-12">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 256 256" className="h-12 w-12">
         <g style={{ stroke: 'none', strokeWidth: 0, strokeDasharray: 'none', strokeLinecap: 'butt', strokeLinejoin: 'miter', strokeMiterlimit: 10, fill: 'none', fillRule: 'nonzero', opacity: 1 }} transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
             <path d="M 36.203 35.438 v -3.51 c -1.218 -0.173 -2.447 -0.262 -3.677 -0.268 c -15.047 0 -27.289 12.244 -27.289 27.291 c 0 9.23 4.613 17.401 11.65 22.342 c -4.712 -5.039 -7.332 -11.681 -7.328 -18.58 C 9.559 47.88 21.453 35.784 36.203 35.438" style={{ stroke: 'none', strokeWidth: 1, strokeDasharray: 'none', strokeLinecap: 'butt', strokeLinejoin: 'miter', strokeMiterlimit: 10, fill: 'rgb(0,242,234)', fillRule: 'nonzero', opacity: 1 }} transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round" />
             <path d="M 36.847 75.175 c 6.714 0 12.19 -5.341 12.44 -11.997 l 0.023 -59.417 h 10.855 c -0.232 -1.241 -0.349 -2.5 -0.35 -3.762 H 44.989 l -0.025 59.419 c -0.247 6.654 -5.726 11.993 -12.438 11.993 c -2.015 0.001 -4 -0.49 -5.782 -1.431 C 29.079 73.238 32.839 75.171 36.847 75.175 M 80.441 23.93 v -3.302 c -3.989 0.004 -7.893 -1.157 -11.232 -3.339 c 2.928 3.371 6.869 5.701 11.234 6.641" style={{ stroke: 'none', strokeWidth: 1, strokeDasharray: 'none', strokeLinecap: 'butt', strokeLinejoin: 'miter', strokeMiterlimit: 10, fill: 'rgb(0,242,234)', fillRule: 'nonzero', opacity: 1 }} transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round" />
@@ -54,12 +54,24 @@ const SocialProof = () => {
         return () => { if (currentRef) observer.unobserve(currentRef); };
     }, []);
     
+    const skills = ['Listening', 'Reading', 'Writing', 'Speaking', 'Vocab', 'Pronunciation', 'Debating'];
+    const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
+
+    useEffect(() => {
+        if (isVisible) {
+            const timer = setInterval(() => {
+                setCurrentSkillIndex(prevIndex => (prevIndex + 1) % skills.length);
+            }, 2500); // Change every 2.5 seconds
+            return () => clearInterval(timer);
+        }
+    }, [isVisible, skills.length]);
+
     const avatars = [
-        "https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1587&auto-format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "http://drills.vn/wp-content/uploads/2025/11/An-Nguyen-1.png",
+        "https://images.pexels.com/photos/11057497/pexels-photo-11057497.jpeg?auto=compress&cs=tinysrgb&w=300",
+        "http://drills.vn/wp-content/uploads/2025/11/Pham-Thanh-Hang-1.png",
+        "https://images.pexels.com/photos/9433434/pexels-photo-9433434.jpeg?auto=compress&cs=tinysrgb&w=300",
+        "https://images.pexels.com/photos/9312891/pexels-photo-9312891.jpeg?auto=compress&cs=tinysrgb&w=300",
     ];
 
     return (
@@ -133,12 +145,24 @@ const SocialProof = () => {
 
                     {/* Text Content Column */}
                     <div className="text-center lg:text-left">
-                        <h2 className={`text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 transition-all duration-700 ease-out pb-2 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                           Luyện tập thông minh,
+                        <h2 className={`text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 transition-all duration-700 ease-out pb-2 leading-tight ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+                           Drill Your{' '}
+                           <span className="inline-block text-yellow-400">
+                                {skills[currentSkillIndex].split('').map((char, index) => (
+                                    <span
+                                        key={`${currentSkillIndex}-${index}`}
+                                        className="animate-wave-in"
+                                        style={{ animationDelay: `${index * 50}ms` }}
+                                    >
+                                        {char}
+                                    </span>
+                                ))}
+                           </span>
+                           {' '}Skills.
                            <br />
-                           Toả sáng toàn cầu
+                           <span className="inline-block pt-2">Toả sáng toàn cầu.</span>
                         </h2>
-                        <p className={`text-base sm:text-lg text-brand-black font-bold mt-8 max-w-lg mx-auto lg:mx-0 transition-all duration-700 ease-out delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+                        <p className={`text-lg sm:text-xl text-brand-black font-bold mt-8 max-w-lg mx-auto lg:mx-0 transition-all duration-700 ease-out delay-200 leading-relaxed ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
                            Tham gia cùng hàng ngàn học viên IELTS Drills từ khắp nơi trên thế giới. Chia sẻ kinh nghiệm, nhận động lực và cùng nhau tiến bộ mỗi ngày.
                         </p>
                         
