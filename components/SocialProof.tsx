@@ -92,7 +92,7 @@ const SocialProof = () => {
                         />
                          <FloatingIcon
                             icon={<NewTiktokIcon />}
-                            className="bottom-0 left-1/2 -translate-x-1/2 animate-float-2"
+                            className="bottom-0 left-[calc(30%+30px)] -translate-x-1/2 animate-float-2"
                             delay={400}
                         />
                         <FloatingIcon
@@ -114,7 +114,7 @@ const SocialProof = () => {
                         />
                         <FloatingIcon
                             icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-black" fill="currentColor" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.6.75Zm-1.8 12.95h1.5l-6.876-8.8-1.54-1.855H3.04l7.76 10.655Z"/></svg>}
-                            className="top-0 left-1/2 -translate-x-1/2 animate-float-1"
+                            className="top-0 left-[35%] -translate-x-1/2 animate-float-1"
                             delay={450}
                         />
                         <FloatingIcon

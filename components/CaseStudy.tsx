@@ -141,6 +141,9 @@ const CaseStudy = () => {
                     className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60"
                     loading="lazy"
                 />
+                <p className="mt-4 text-center text-gray-600 italic">
+                    Giao diện Dashboard trực quan, giúp bạn dễ dàng theo dõi tiến độ, xem lại lịch sử làm bài và nhận biết điểm mạnh, điểm yếu của bản thân.
+                </p>
             </div>
         </div>
       </div>

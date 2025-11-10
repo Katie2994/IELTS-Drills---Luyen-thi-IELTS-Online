@@ -6,6 +6,16 @@ const PlayIcon = () => (
     </svg>
 );
 
+const ArrowRightIcon = () => (
+    <svg className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+);
+
+const CheckIcon = () => (
+     <svg className="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+);
+
 const VideoSection = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -48,9 +58,9 @@ const VideoSection = () => {
                     <p className="text-lg sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-brand-black to-gray-500 mb-6 max-w-2xl mx-auto">
                         Nếu bạn vẫn còn phân vân, hãy xem video dưới đây để thấy Trợ lý AI của chúng tôi làm được những gì.
                     </p>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">AI Chấm Bài Writing Chỉ Trong Vài Giây</h2>
-                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-2xl mx-auto">
-                        Xem demo cách Trợ lý AI của chúng tôi phân tích, chấm điểm và đưa ra gợi ý chi tiết để bạn nâng band điểm Writing một cách đột phá.
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">AI Hướng Dẫn Phân Tích Bài Luận &amp; Viết Câu Trong Vài Giây</h2>
+                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-3xl mx-auto">
+                        Khám phá cách AI không chỉ phân tích đề bài mà còn hướng dẫn bạn từng bước xây dựng ý tưởng và viết câu hoàn chỉnh, giúp bạn tự tin chinh phục mọi chủ đề Writing.
                     </p>
                 </div>
                 <div 
@@ -62,8 +72,8 @@ const VideoSection = () => {
                         <video
                             ref={videoRef}
                             className="w-full h-full"
-                            src={isVisible ? "http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-Submit-Writing-Task-2-final.mp4" : undefined}
-                            poster="https://images.unsplash.com/photo-1554415707-6e8cf603245d?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            src={isVisible ? "http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-Writing-Practice.mp4" : undefined}
+                            poster="http://drills.vn/wp-content/uploads/2025/11/Writing-Practice-Mode.png"
                             controls={isPlaying}
                             onPlay={() => setIsPlaying(true)}
                             onPause={() => setIsPlaying(false)}
@@ -87,6 +97,45 @@ const VideoSection = () => {
                         )}
                     </div>
                 </div>
+
+                <div className="mt-24 max-w-3xl mx-auto">
+                    <div className={`text-center transition-all duration-700 ease-out delay-300 ${ isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5' }`}>
+                        <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
+                           Kiểm Tra Trình Độ Toàn Diện Miễn Phí
+                        </h2>
+                        <p className="text-base sm:text-lg text-brand-black font-bold mt-6">
+                           Đánh giá chính xác trình độ của bạn qua bài thi 4 kỹ năng chuẩn Cambridge. Nhận ngay kết quả chi tiết và lộ trình học được AI cá nhân hoá để bứt phá band điểm.
+                        </p>
+                        
+                        <ul className="mt-8 space-y-4 text-gray-700 text-left max-w-lg mx-auto">
+                            <li className="flex items-start">
+                                <CheckIcon />
+                                <span>Bao gồm đầy đủ 4 kỹ năng: Listening, Reading, Writing, Speaking.</span>
+                            </li>
+                             <li className="flex items-start">
+                                <CheckIcon />
+                                <span>AI phân tích điểm mạnh, điểm yếu và đề xuất lộ trình học.</span>
+                            </li>
+                             <li className="flex items-start">
+                                <CheckIcon />
+                                <span>Hoàn toàn miễn phí, không yêu cầu tài khoản.</span>
+                            </li>
+                        </ul>
+                        
+                        <div className="mt-10">
+                            <a
+                                href="https://ieltsdrills.com/mindmap/placement-test?id=v6XiIZj9A6jnkMtk5paN"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group inline-flex items-center justify-center bg-brand-red text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
+                            >
+                                Làm bài thi ngay
+                                <ArrowRightIcon />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     );
