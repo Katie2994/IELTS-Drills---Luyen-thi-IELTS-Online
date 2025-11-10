@@ -47,7 +47,7 @@ const ReadingPractice = () => {
     ];
 
     return (
-        <section ref={sectionRef} className="py-28 bg-white">
+        <section ref={sectionRef} className="py-28 bg-white dark:bg-gray-900">
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Image Column */}
@@ -55,7 +55,7 @@ const ReadingPractice = () => {
                         <img 
                             src="http://drills.vn/wp-content/uploads/2025/11/4-1.png" 
                             alt="Luyện đề thi IELTS Reading trên IELTS Drills" 
-                            className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60"
+                            className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60 dark:border-gray-700/60"
                             loading="lazy"
                         />
                     </div>
@@ -64,7 +64,7 @@ const ReadingPractice = () => {
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
                             Luyện Đề Thi IELTS Reading Miễn Phí
                         </h2>
-                        <p className="text-base sm:text-lg text-brand-black font-bold mt-6">
+                        <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6">
                             Thử sức với bộ sưu tập đề thi Reading sát với đề thi thật đã ra. Cải thiện kỹ năng đọc hiểu, quản lý thời gian và làm quen với các dạng câu hỏi khó nhất.
                         </p>
                         
@@ -72,7 +72,7 @@ const ReadingPractice = () => {
                             {features.map((feature, index) => (
                                 <div key={index} className="flex items-start">
                                     <CheckIcon />
-                                    <p className="text-gray-600">{feature.description}</p>
+                                    <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
                                 </div>
                             ))}
                         </div>

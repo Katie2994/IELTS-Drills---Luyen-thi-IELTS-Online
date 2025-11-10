@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
@@ -16,11 +16,37 @@ import SpeakingTopics from './components/SpeakingTopics';
 import CaseStudy from './components/CaseStudy';
 import TransformationJourney from './components/TransformationJourney';
 import Methodology from './components/Methodology';
+import AboutUs from './components/AboutUs';
 
 function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    // Default to dark mode, unless the user has explicitly chosen light mode.
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const storedPrefs = window.localStorage.getItem('theme');
+      if (storedPrefs === 'light') {
+        return 'light';
+      }
+    }
+    return 'dark';
+  });
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [theme]);
+
   return (
-    <div className="bg-brand-gray text-brand-black font-sans antialiased">
-      <Header />
+    <div className="bg-brand-gray text-brand-black font-sans antialiased dark:bg-gray-900 dark:text-gray-300">
+      <Header theme={theme} toggleTheme={toggleTheme} />
       <main className="isolate">
         <Hero />
         <SocialProof />
@@ -36,6 +62,7 @@ function App() {
         <Testimonials />
         <Pricing />
         <Faq />
+        <AboutUs />
       </main>
       <Footer />
       <ScrollToTopButton />

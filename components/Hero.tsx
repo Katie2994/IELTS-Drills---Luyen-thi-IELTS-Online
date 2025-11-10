@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 const ArrowIcon = () => (
-    <svg className="w-10 h-10 md:w-12 md:h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg className="w-10 h-10 md:w-12 md:h-12 text-gray-400 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
     </svg>
 );
@@ -55,19 +55,19 @@ const Hero = () => {
 
                 <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 animate-fade-in-up" style={{animationDelay: '300ms'}}>
                     {/* Before Card */}
-                    <div className="w-full max-w-sm bg-white/10 backdrop-blur-2xl rounded-3xl p-8 border border-white/20 shadow-large text-left transform transition-transform duration-500 hover:scale-105">
-                        <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">Lúc trước</p>
-                        <p className="text-5xl font-bold my-4 text-gray-100">Writing <span className="text-yellow-400">6.5</span></p>
-                        <p className="text-gray-300">"Mình loay hoay không biết cải thiện bài viết thế nào, ý tưởng thì nghèo nàn, ngữ pháp lặp lại và không biết mình sai ở đâu."</p>
+                    <div className="w-full max-w-sm bg-white/10 dark:bg-black/20 backdrop-blur-2xl rounded-3xl p-8 border border-white/20 dark:border-white/10 shadow-large text-left transform transition-transform duration-500 hover:scale-105">
+                        <p className="text-sm font-semibold uppercase tracking-wider text-gray-300 dark:text-gray-400">Lúc trước</p>
+                        <p className="text-5xl font-bold my-4 text-gray-100 dark:text-gray-200">Writing <span className="text-yellow-400">6.5</span></p>
+                        <p className="text-gray-300 dark:text-gray-400">"Mình loay hoay không biết cải thiện bài viết thế nào, ý tưởng thì nghèo nàn, ngữ pháp lặp lại và không biết mình sai ở đâu."</p>
                     </div>
 
                     {/* Arrow */}
-                    <div className="my-4 md:my-0 md:px-4 flex-shrink-0">
+                    <div className="my-4 md:my-0 md:px-4 flex-shrink-0 rotate-90 md:rotate-0">
                        <ArrowIcon />
                     </div>
 
                     {/* After Card */}
-                    <div className="w-full max-w-sm bg-white/20 backdrop-blur-2xl rounded-3xl p-8 border border-white/30 shadow-large text-left transform transition-transform duration-500 hover:scale-105 ring-2 ring-yellow-300/50">
+                    <div className="w-full max-w-sm bg-white/20 dark:bg-black/30 backdrop-blur-2xl rounded-3xl p-8 border border-white/30 dark:border-white/20 shadow-large text-left transform transition-transform duration-500 hover:scale-105 ring-2 ring-yellow-300/50">
                         <div className="flex justify-between items-center">
                             <p className="text-sm font-semibold uppercase tracking-wider text-yellow-300">Sau khi dùng IELTS Drills</p>
                             <StarIcon />
@@ -78,7 +78,7 @@ const Hero = () => {
                 </div>
 
                 <div className="mt-16 animate-fade-in-up" style={{animationDelay: '450ms'}}>
-                    <a href="#pricing" className="bg-white text-brand-black font-bold py-4 px-10 rounded-xl text-lg hover:bg-yellow-300 transition-all duration-300 shadow-large hover:shadow-2xl transform hover:-translate-y-1">
+                    <a href="#pricing" className="bg-white text-brand-black dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-500 font-bold py-4 px-10 rounded-xl text-lg hover:bg-yellow-300 transition-all duration-300 shadow-large hover:shadow-2xl transform hover:-translate-y-1">
                         Bắt đầu hành trình của bạn
                     </a>
                 </div>

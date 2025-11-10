@@ -24,7 +24,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer, delay = 0 }) => {
     return (
         <div 
             ref={ref}
-            className={`bg-white rounded-3xl shadow-medium transition-all duration-700 ease-out border border-gray-200/60 mb-4 ${
+            className={`bg-white dark:bg-gray-900 rounded-3xl shadow-medium transition-all duration-700 ease-out border border-gray-200/60 dark:border-gray-700 mb-4 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{ transitionDelay: `${delay}ms` }}
@@ -34,7 +34,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer, delay = 0 }) => {
                 className="w-full flex justify-between items-center text-left p-6"
                 aria-expanded={isOpen}
             >
-                <h4 className="text-lg font-semibold text-gray-900">{question}</h4>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{question}</h4>
                 <span className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
                     <svg className="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
@@ -42,7 +42,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer, delay = 0 }) => {
                 </span>
             </button>
             <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
-                <p className="text-gray-600 px-6 pb-6">
+                <p className="text-gray-600 dark:text-gray-400 px-6 pb-6">
                     {answer}
                 </p>
             </div>
@@ -88,7 +88,7 @@ const Faq = () => {
     ];
 
     return (
-        <section id="faq" className="py-28 bg-brand-gray">
+        <section id="faq" className="py-28 bg-brand-gray dark:bg-brand-black">
             <div className="container mx-auto px-6 max-w-3xl">
                 <div 
                     ref={titleRef}
@@ -97,7 +97,7 @@ const Faq = () => {
                     }`}
                 >
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">Câu Hỏi Thường Gặp</h2>
-                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8">Bạn có câu hỏi? Chúng tôi có câu trả lời.</p>
+                    <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-8">Bạn có câu hỏi? Chúng tôi có câu trả lời.</p>
                 </div>
                 <div>
                     {faqData.map((item, index) => (

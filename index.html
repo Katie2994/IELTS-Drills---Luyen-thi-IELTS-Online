@@ -34,6 +34,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
@@ -71,6 +72,9 @@
         font-family: 'Manrope', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+      }
+      .dark body {
+        background-color: #111827; /* gray-900 */
       }
       
       @keyframes gradient {

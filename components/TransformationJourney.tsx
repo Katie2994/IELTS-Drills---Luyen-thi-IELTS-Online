@@ -36,7 +36,7 @@ const TransformationJourney = memo(() => {
   }, []);
 
   return (
-    <section id="transformation" ref={sectionRef} className="py-28 bg-white">
+    <section id="transformation" ref={sectionRef} className="py-28 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div
@@ -47,7 +47,7 @@ const TransformationJourney = memo(() => {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
             Hành Trình Lột Xác
           </h2>
-          <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-8 max-w-3xl mx-auto">
             Xem sức mạnh của AI và chuyên gia biến một bài viết từ band 5.0 thành 7.0 chỉ sau một lần sửa.
           </p>
         </div>
@@ -56,25 +56,25 @@ const TransformationJourney = memo(() => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Before */}
           <div
-            className={`bg-white rounded-3xl p-6 shadow-medium border border-gray-200/60 transition-all duration-700 ease-out ${
+            className={`bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-medium border border-gray-200/60 dark:border-gray-700 transition-all duration-700 ease-out ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
               Lần đầu - <span className="text-red-500">Band 5.0</span>
             </h3>
 
             {/* Tabs */}
-            <div className="mb-5 flex space-x-1 sm:space-x-2 border-b border-gray-200">
+            <div className="mb-5 flex space-x-1 sm:space-x-2 border-b border-gray-200 dark:border-gray-600">
               {beforeImages.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveTab(index)}
                   className={`px-3 sm:px-4 py-2.5 font-semibold text-sm rounded-t-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red/50 ${
                     activeTab === index
-                      ? 'bg-red-50 text-brand-red border-b-2 border-brand-red'
-                      : 'text-gray-500 hover:text-gray-800 hover:bg-gray-50'
+                      ? 'bg-red-50 dark:bg-brand-red/10 text-brand-red border-b-2 border-brand-red'
+                      : 'text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700/50'
                   }`}
                   aria-selected={activeTab === index}
                   role="tab"
@@ -85,7 +85,7 @@ const TransformationJourney = memo(() => {
             </div>
 
             {/* Image Container - TỐI ƯU TỶ LỆ */}
-            <div className="relative aspect-[154/100] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 shadow-inner">
+            <div className="relative aspect-[154/100] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 shadow-inner">
               {beforeImages.map((image, index) => (
                 <img
                   key={index}
@@ -111,20 +111,20 @@ const TransformationJourney = memo(() => {
 
           {/* After */}
           <div
-            className={`bg-white rounded-3xl p-6 shadow-large border border-transparent ring-2 ring-yellow-400/80 transition-all duration-700 ease-out lg:mt-10 ${
+            className={`bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-large border border-transparent ring-2 ring-yellow-400/80 dark:ring-yellow-500/80 transition-all duration-700 ease-out lg:mt-10 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'
             }`}
             style={{ transitionDelay: '400ms' }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Viết lại - <span className="text-green-500">Band 7.0</span>
             </h3>
-            <p className="text-gray-600 mb-5">
+            <p className="text-gray-600 dark:text-gray-400 mb-5">
               Áp dụng gợi ý từ AI, học viên đã cải thiện toàn diện bài viết.
             </p>
 
             {/* After Image */}
-            <div className="relative aspect-[154/100] overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 shadow-inner">
+            <div className="relative aspect-[154/100] overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 shadow-inner">
               <img
                 src={afterImage.src}
                 alt={afterImage.alt}

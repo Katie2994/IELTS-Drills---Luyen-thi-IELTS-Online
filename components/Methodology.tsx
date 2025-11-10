@@ -45,7 +45,7 @@ const Methodology = () => {
     ];
 
     return (
-        <section ref={sectionRef} className="py-28 bg-white">
+        <section ref={sectionRef} className="py-28 bg-white dark:bg-gray-900">
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Image Column */}
@@ -53,7 +53,7 @@ const Methodology = () => {
                         <img 
                             src="http://drills.vn/wp-content/uploads/2025/11/3.png" 
                             alt="Khoá học Daily Listening từ video Youtube" 
-                            className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60"
+                            className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60 dark:border-gray-700/60"
                             loading="lazy"
                         />
                     </div>
@@ -62,35 +62,35 @@ const Methodology = () => {
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
                             Phương Pháp Đã Được Kiểm Chứng
                         </h2>
-                        <p className="text-base sm:text-lg text-brand-black font-bold mt-6">
+                        <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6">
                             Các khoá học được thiết kế chuẩn mực, dựa trên nghiên cứu sư phạm và được chứng minh hiệu quả qua sự thành công của hàng ngàn học viên.
                         </p>
                         
                         <div className="mt-8 space-y-6">
                             {features.map((feature, index) => (
-                                <div key={index} className="flex items-start p-4 bg-gray-50 rounded-2xl border border-gray-200/80">
+                                <div key={index} className="flex items-start p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200/80 dark:border-gray-700">
                                     <CheckIcon />
                                     <div>
-                                        <h4 className="font-bold text-gray-900 text-lg">{feature.title}</h4>
-                                        <p className="text-gray-600 mt-1">{feature.description}</p>
+                                        <h4 className="font-bold text-gray-900 dark:text-white text-lg">{feature.title}</h4>
+                                        <p className="text-gray-600 dark:text-gray-400 mt-1">{feature.description}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
                         
-                        <div className="mt-10 pt-8 border-t border-gray-200">
+                        <div className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-700">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                                <div className="bg-gray-50 p-4 rounded-xl border border-gray-200/80">
+                                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-200/80 dark:border-gray-700">
                                     <p className="text-3xl font-extrabold text-brand-red">90%+</p>
-                                    <p className="text-gray-600 font-semibold mt-1 text-sm">Học viên đạt band mục tiêu</p>
+                                    <p className="text-gray-600 dark:text-gray-400 font-semibold mt-1 text-sm">Học viên đạt band mục tiêu</p>
                                 </div>
-                                <div className="bg-gray-50 p-4 rounded-xl border border-gray-200/80">
+                                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-200/80 dark:border-gray-700">
                                     <p className="text-3xl font-extrabold text-brand-red">~100%</p>
-                                    <p className="text-gray-600 font-semibold mt-1 text-sm">Học viên hài lòng</p>
+                                    <p className="text-gray-600 dark:text-gray-400 font-semibold mt-1 text-sm">Học viên hài lòng</p>
                                 </div>
-                                <div className="bg-gray-50 p-4 rounded-xl border border-gray-200/80">
+                                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-200/80 dark:border-gray-700">
                                     <p className="text-3xl font-extrabold text-brand-red">95%+</p>
-                                    <p className="text-gray-600 font-semibold mt-1 text-sm">Thấy khoá học dễ hiểu</p>
+                                    <p className="text-gray-600 dark:text-gray-400 font-semibold mt-1 text-sm">Thấy khoá học dễ hiểu</p>
                                 </div>
                             </div>
                         </div>
@@ -105,13 +105,13 @@ const Methodology = () => {
                                 Học thử Daily Listening
                                 <ArrowRightIcon />
                             </a>
-                            <div className="p-4 bg-yellow-50 border-2 border-yellow-200 rounded-2xl shadow-soft text-center sm:text-left sm:flex items-center justify-between gap-4">
+                            <div className="p-4 bg-yellow-50 dark:bg-yellow-900/20 border-2 border-yellow-200 dark:border-yellow-500/30 rounded-2xl shadow-soft text-center sm:text-left sm:flex items-center justify-between gap-4">
                                 <div>
-                                    <h4 className="font-bold text-gray-900 text-lg">
+                                    <h4 className="font-bold text-gray-900 dark:text-yellow-200 text-lg">
                                         <span className="bg-yellow-400 text-yellow-900 text-xs font-bold mr-2 px-2.5 py-0.5 rounded-full">TOP 1</span>
                                         Khoá học IELTS Writing Task 1
                                     </h4>
-                                    <p className="text-gray-600 mt-1 text-sm">Được học viên yêu thích nhất, giúp chinh phục dạng bài khó nhằn.</p>
+                                    <p className="text-gray-600 dark:text-yellow-400/80 mt-1 text-sm">Được học viên yêu thích nhất, giúp chinh phục dạng bài khó nhằn.</p>
                                 </div>
                                 <a href="https://ieltsdrills.com/mindmap/placement-test?id=v6XiIZj9A6jnkMtk5paN"
                                    target="_blank"

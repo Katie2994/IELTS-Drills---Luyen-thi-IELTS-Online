@@ -65,7 +65,7 @@ const JourneyItem: React.FC<JourneyItemProps> = ({ icon, title, description, isL
     <div ref={ref} className="relative flex items-start group">
       {/* Timeline line */}
       {!isLast && (
-        <div className="absolute top-14 left-7 -ml-px w-0.5 bg-gray-200" style={{ height: 'calc(100% - 2rem)' }} aria-hidden="true"></div>
+        <div className="absolute top-14 left-7 -ml-px w-0.5 bg-gray-200 dark:bg-gray-700" style={{ height: 'calc(100% - 2rem)' }} aria-hidden="true"></div>
       )}
       {!isLast && (
         <div className={`absolute top-14 left-7 -ml-px w-0.5 bg-gradient-to-b from-brand-red to-yellow-400 transition-all duration-1000 ease-out ${isVisible ? 'max-h-full' : 'max-h-0'}`} style={{ height: 'calc(100% - 2rem)' }} aria-hidden="true"></div>
@@ -78,8 +78,8 @@ const JourneyItem: React.FC<JourneyItemProps> = ({ icon, title, description, isL
 
       {/* Content */}
       <div className={`ml-6 flex-1 transition-all duration-700 ease-out ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-5 opacity-0'}`} style={{ transitionDelay: `${delay}ms`}}>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+        <p className="text-gray-600 dark:text-gray-400">{description}</p>
       </div>
     </div>
   );
@@ -105,13 +105,13 @@ const CaseStudy = () => {
   }, []);
 
   return (
-    <section id="learning-journey" ref={sectionRef} className="py-28 bg-white overflow-hidden">
+    <section id="learning-journey" ref={sectionRef} className="py-28 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
             Lộ Trình Chinh Phục IELTS Rõ Ràng
           </h2>
-          <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-8 max-w-3xl mx-auto">
             Từ lúc bắt đầu đến khi đạt mục tiêu, mọi bước tiến của bạn đều được theo dõi và tối ưu hoá bởi AI, đảm bảo hiệu quả học tập cao nhất.
           </p>
         </div>
@@ -138,10 +138,10 @@ const CaseStudy = () => {
                 <img 
                     src="http://drills.vn/wp-content/uploads/2025/11/13.png" 
                     alt="Dashboard theo dõi tiến độ học tập" 
-                    className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60"
+                    className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60 dark:border-gray-700/60"
                     loading="lazy"
                 />
-                <p className="mt-4 text-center text-gray-600 italic">
+                <p className="mt-4 text-center text-gray-600 dark:text-gray-400 italic">
                     Giao diện Dashboard trực quan, giúp bạn dễ dàng theo dõi tiến độ, xem lại lịch sử làm bài và nhận biết điểm mạnh, điểm yếu của bản thân.
                 </p>
             </div>

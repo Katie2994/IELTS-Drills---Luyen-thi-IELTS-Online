@@ -36,9 +36,9 @@ const Footer = () => {
                     <div>
                         <h4 className="font-semibold uppercase tracking-wider text-gray-300 mb-4">Công ty</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Về chúng tôi</a></li>
-                            <li><a href="#" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Blog</a></li>
-                            <li><a href="#" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Liên hệ</a></li>
+                            <li><a href="#about-us" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Về chúng tôi</a></li>
+                            <li><a href="https://drills.vn" target="_blank" rel="noopener noreferrer" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Blog</a></li>
+                            <li><a href="https://www.facebook.com/ieltsdrills" target="_blank" rel="noopener noreferrer" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Liên hệ</a></li>
                         </ul>
                     </div>
                     <div>

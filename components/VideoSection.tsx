@@ -48,23 +48,23 @@ const VideoSection = () => {
     };
 
     return (
-        <section id="video-demo" ref={sectionRef} className="py-28 bg-white">
+        <section id="video-demo" ref={sectionRef} className="py-28 bg-white dark:bg-gray-900">
             <div className="container mx-auto px-6">
                 <div 
                     className={`text-center mb-16 transition-all duration-700 ease-out ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                     }`}
                 >
-                    <p className="text-lg sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-brand-black to-gray-500 mb-6 max-w-2xl mx-auto">
+                    <p className="text-lg sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-brand-black to-gray-500 dark:from-gray-300 dark:to-gray-500 mb-6 max-w-2xl mx-auto">
                         Nếu bạn vẫn còn phân vân, hãy xem video dưới đây để thấy Trợ lý AI của chúng tôi làm được những gì.
                     </p>
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">AI Hướng Dẫn Phân Tích Bài Luận &amp; Viết Câu Trong Vài Giây</h2>
-                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-3xl mx-auto">
+                    <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-8 max-w-3xl mx-auto">
                         Khám phá cách AI không chỉ phân tích đề bài mà còn hướng dẫn bạn từng bước xây dựng ý tưởng và viết câu hoàn chỉnh, giúp bạn tự tin chinh phục mọi chủ đề Writing.
                     </p>
                 </div>
                 <div 
-                    className={`max-w-4xl mx-auto bg-white rounded-4xl p-4 shadow-large border border-gray-200/60 transition-all duration-700 ease-out delay-200 ${
+                    className={`max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-4xl p-4 shadow-large border border-gray-200/60 dark:border-gray-700/60 transition-all duration-700 ease-out delay-200 ${
                         isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                     }`}
                 >
@@ -98,16 +98,28 @@ const VideoSection = () => {
                     </div>
                 </div>
 
+                <div className="mt-12 text-center">
+                    <a
+                        href="https://ieltsdrills.com/writing-practice/step1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center justify-center bg-brand-red text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
+                    >
+                        Dùng thử ngay
+                        <ArrowRightIcon />
+                    </a>
+                </div>
+
                 <div className="mt-24 max-w-3xl mx-auto">
                     <div className={`text-center transition-all duration-700 ease-out delay-300 ${ isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5' }`}>
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
                            Kiểm Tra Trình Độ Toàn Diện Miễn Phí
                         </h2>
-                        <p className="text-base sm:text-lg text-brand-black font-bold mt-6">
+                        <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6">
                            Đánh giá chính xác trình độ của bạn qua bài thi 4 kỹ năng chuẩn Cambridge. Nhận ngay kết quả chi tiết và lộ trình học được AI cá nhân hoá để bứt phá band điểm.
                         </p>
                         
-                        <ul className="mt-8 space-y-4 text-gray-700 text-left max-w-lg mx-auto">
+                        <ul className="mt-8 space-y-4 text-gray-700 dark:text-gray-400 text-left max-w-lg mx-auto">
                             <li className="flex items-start">
                                 <CheckIcon />
                                 <span>Bao gồm đầy đủ 4 kỹ năng: Listening, Reading, Writing, Speaking.</span>

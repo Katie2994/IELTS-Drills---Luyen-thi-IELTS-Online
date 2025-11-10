@@ -97,7 +97,7 @@ const SpeakingTopics = memo(() => {
     <section
       id="speaking-topics"
       ref={sectionRef}
-      className="py-28 bg-brand-gray"
+      className="py-28 bg-brand-gray dark:bg-brand-black"
       aria-labelledby="speaking-topics-title"
     >
       <div className="container mx-auto px-6">
@@ -113,7 +113,7 @@ const SpeakingTopics = memo(() => {
           >
             Kho Đề Speaking Khổng Lồ, Cập Nhật Liên Tục
           </h2>
-          <p className="text-base sm:text-lg text-brand-black font-bold mt-6 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6 max-w-3xl mx-auto">
             Không bao giờ cạn ý tưởng với ngân hàng đề thi Speaking đa dạng, bám sát xu hướng ra đề mới nhất. Bạn sẽ nhận được phần chấm chữa chi tiết và những gợi ý hữu ích từ AI, giúp bạn tự tin đối mặt với mọi chủ đề.
           </p>
         </div>
@@ -129,14 +129,14 @@ const SpeakingTopics = memo(() => {
           role="region"
           aria-label="Carousel minh hoạ bài thi Speaking"
         >
-          <div className="relative overflow-hidden rounded-3xl shadow-large border border-gray-200/60 aspect-[16/10] sm:aspect-[16/9] bg-white">
+          <div className="relative overflow-hidden rounded-3xl shadow-large border border-gray-200/60 dark:border-gray-700/60 aspect-[16/10] sm:aspect-[16/9] bg-white dark:bg-gray-900">
             <div
               className="flex transition-transform ease-in-out duration-500 h-full will-change-transform"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               aria-live="polite"
             >
               {slides.map((slide, index) => (
-                <div key={index} className="flex-shrink-0 w-full h-full bg-gray-100">
+                <div key={index} className="flex-shrink-0 w-full h-full bg-gray-100 dark:bg-gray-800">
                   <img
                     src={slide.url}
                     alt={slide.alt}
@@ -153,9 +153,9 @@ const SpeakingTopics = memo(() => {
             <button
               onClick={prevSlide}
               aria-label="Slide trước"
-              className="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2.5 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red z-10 backdrop-blur-sm"
+              className="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white/70 hover:bg-white dark:bg-black/50 dark:hover:bg-black p-2.5 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red z-10 backdrop-blur-sm"
             >
-              <svg className="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-5 w-5 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -163,9 +163,9 @@ const SpeakingTopics = memo(() => {
             <button
               onClick={nextSlide}
               aria-label="Slide tiếp theo"
-              className="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2.5 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red z-10 backdrop-blur-sm"
+              className="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white/70 hover:bg-white dark:bg-black/50 dark:hover:bg-black p-2.5 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red z-10 backdrop-blur-sm"
             >
-              <svg className="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-5 w-5 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -181,12 +181,37 @@ const SpeakingTopics = memo(() => {
                   className={`w-2.5 h-2.5 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red ${
                     currentIndex === index
                       ? 'bg-brand-red w-8'
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                   }`}
                 />
               ))}
             </div>
           </div>
+        </div>
+        
+        {/* CTA Button */}
+        <div
+          className={`text-center mt-12 transition-all duration-700 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+          }`}
+          style={{ transitionDelay: '400ms' }}
+        >
+          <a
+            href="https://ieltsdrills.com/speak/category/ielts-speaking-practice-drill"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center bg-brand-red text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
+          >
+            Thử sức Speaking ngay
+            <svg
+              className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

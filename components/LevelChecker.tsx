@@ -112,53 +112,53 @@ const LevelChecker = () => {
   const result = getResult(score);
 
   return (
-    <section id="level-checker" ref={sectionRef} className="py-28 bg-white">
+    <section id="level-checker" ref={sectionRef} className="py-28 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
         <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">Bạn Đã Sẵn Sàng Cho IELTS?</h2>
-          <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-8 max-w-2xl mx-auto">
             Kiểm tra nhanh trình độ của bạn để nhận lộ trình học được cá nhân hoá.
           </p>
         </div>
-        <div className={`max-w-2xl mx-auto bg-white rounded-4xl p-8 shadow-large border border-gray-200/60 transition-all duration-700 ease-out delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <div className={`max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-4xl p-8 shadow-large border border-gray-200/60 dark:border-gray-700 transition-all duration-700 ease-out delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           {!showResult ? (
             <div>
               <div className="flex justify-between items-center mb-6">
-                 <p className="text-sm font-semibold text-gray-500">Câu hỏi {currentQuestionIndex + 1}/{quizData.length}</p>
-                 <div className="w-full bg-gray-200 rounded-full h-2.5 mx-4">
+                 <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">Câu hỏi {currentQuestionIndex + 1}/{quizData.length}</p>
+                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mx-4">
                     <div className="bg-brand-red h-2.5 rounded-full transition-all duration-500" style={{ width: `${((currentQuestionIndex + 1) / quizData.length) * 100}%` }}></div>
                 </div>
               </div>
 
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-8 text-center">{quizData[currentQuestionIndex].question}</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">{quizData[currentQuestionIndex].question}</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {quizData[currentQuestionIndex].options.map((option, index) => (
                   <button
                     key={index}
                     onClick={() => handleAnswer(option)}
-                    className="w-full text-left p-4 rounded-xl border-2 border-gray-200 hover:border-brand-red hover:bg-red-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2"
+                    className="w-full text-left p-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 hover:border-brand-red hover:bg-red-50 dark:hover:bg-brand-red/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2 dark:focus:ring-offset-gray-800"
                   >
-                    <span className="font-semibold text-gray-700">{option}</span>
+                    <span className="font-semibold text-gray-700 dark:text-gray-300">{option}</span>
                   </button>
                 ))}
               </div>
             </div>
           ) : (
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-brand-black opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>Kết quả của bạn</h3>
+              <h3 className="text-2xl font-bold text-brand-black dark:text-white opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>Kết quả của bạn</h3>
               <p className="text-5xl font-extrabold my-4 text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-yellow-400 opacity-0 animate-fade-in-up" style={{ animationDelay: '250ms' }}>{result.level}</p>
-              <p className="text-gray-600 max-w-md mx-auto mb-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '400ms' }}>{result.description}</p>
+              <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '400ms' }}>{result.description}</p>
               
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200 opacity-0 animate-fade-in-up" style={{ animationDelay: '550ms' }}>
-                <p className="font-bold text-lg text-gray-900">Gói học đề xuất</p>
-                <p className="text-3xl font-bold my-2">{result.plan}</p>
+              <div className="bg-gray-50 dark:bg-gray-700/50 rounded-2xl p-6 border border-gray-200 dark:border-gray-600 opacity-0 animate-fade-in-up" style={{ animationDelay: '550ms' }}>
+                <p className="font-bold text-lg text-gray-900 dark:text-white">Gói học đề xuất</p>
+                <p className="text-3xl font-bold my-2 text-brand-black dark:text-gray-200">{result.plan}</p>
                 <a href="#pricing" className="bg-brand-red text-white font-bold py-3 px-8 rounded-xl text-lg hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block mt-4">
                   Xem chi tiết gói {result.plan}
                 </a>
               </div>
               
-              <button onClick={restartQuiz} className="mt-8 text-gray-600 hover:text-brand-black font-semibold transition-colors opacity-0 animate-fade-in-up" style={{ animationDelay: '700ms' }}>Làm lại bài kiểm tra</button>
+              <button onClick={restartQuiz} className="mt-8 text-gray-600 dark:text-gray-400 hover:text-brand-black dark:hover:text-white font-semibold transition-colors opacity-0 animate-fade-in-up" style={{ animationDelay: '700ms' }}>Làm lại bài kiểm tra</button>
             </div>
           )}
         </div>

@@ -116,7 +116,7 @@ const Testimonials = () => {
     };
 
     return (
-        <section id="testimonials" className="py-28 bg-brand-gray overflow-hidden">
+        <section id="testimonials" className="py-28 bg-brand-gray dark:bg-brand-black overflow-hidden">
             <div className="container mx-auto px-6">
                 <div 
                     ref={titleRef}
@@ -125,7 +125,7 @@ const Testimonials = () => {
                     }`}
                 >
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">Gia Nhập Cùng Hàng Ngàn Học Viên Thành Công</h2>
-                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-2xl mx-auto">Xem IELTS Drills đã giúp những học viên như bạn đạt được ước mơ như thế nào.</p>
+                    <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-8 max-w-2xl mx-auto">Xem IELTS Drills đã giúp những học viên như bạn đạt được ước mơ như thế nào.</p>
                 </div>
 
                 <div className="max-w-xl mx-auto">
@@ -133,26 +133,26 @@ const Testimonials = () => {
                         {testimonialData.map((testimonial, index) => (
                             <div 
                                 key={index}
-                                className="absolute inset-0 bg-white p-8 rounded-3xl shadow-medium flex flex-col border border-gray-200/60 transition-all duration-500 ease-out"
+                                className="absolute inset-0 bg-white dark:bg-gray-900 p-8 rounded-3xl shadow-medium flex flex-col border border-gray-200/60 dark:border-gray-700 transition-all duration-500 ease-out"
                                 style={getCardStyle(index)}
                                 aria-hidden={index !== activeIndex}
                             >
                                 <div className="flex mb-4">
                                     {[...Array(5)].map((_, i) => <StarIcon key={i} className="w-5 h-5 text-yellow-400" />)}
                                 </div>
-                                <blockquote className="text-gray-600 italic flex-grow text-xl md:text-2xl w-full">"{testimonial.quote}"</blockquote>
+                                <blockquote className="text-gray-600 dark:text-gray-400 italic flex-grow text-xl md:text-2xl w-full">"{testimonial.quote}"</blockquote>
                                 <div className="flex items-center w-full mt-6">
-                                    <img className="w-16 h-16 rounded-full mr-5 object-cover ring-2 ring-gray-200" src={testimonial.imgSrc} alt={testimonial.name} loading="lazy" />
+                                    <img className="w-16 h-16 rounded-full mr-5 object-cover ring-2 ring-gray-200 dark:ring-gray-700" src={testimonial.imgSrc} alt={testimonial.name} loading="lazy" />
                                     <div className="flex-1">
                                         <p className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-yellow-500 mb-1">{testimonial.score}</p>
-                                        <p className="font-bold text-gray-900 text-lg">{testimonial.name}</p>
-                                        <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                                        <p className="font-bold text-gray-900 dark:text-white text-lg">{testimonial.name}</p>
+                                        <p className="text-gray-500 dark:text-gray-400 text-sm">{testimonial.role}</p>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-                     <div className="text-center mt-8 text-gray-500 font-semibold" aria-live="polite">
+                     <div className="text-center mt-8 text-gray-500 dark:text-gray-400 font-semibold" aria-live="polite">
                         Click vào thẻ để xem tiếp ({activeIndex + 1}/{testimonialData.length})
                      </div>
                 </div>

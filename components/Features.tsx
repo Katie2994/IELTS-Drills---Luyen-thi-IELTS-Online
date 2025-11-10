@@ -96,7 +96,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
             tabIndex={hasVideo ? 0 : undefined}
             onKeyDown={hasVideo ? (e) => { if (e.key === 'Enter' || e.key === ' ') onWatchDemo(videoSrc!); } : undefined}
             aria-label={hasVideo ? `Xem demo cho ${title}` : undefined}
-            className={`group bg-white p-6 rounded-3xl shadow-medium transition-all duration-500 ease-out transform hover:-translate-y-2 border border-gray-200/60 flex flex-col h-full text-left ${hasVideo ? 'cursor-pointer' : ''} ${
+            className={`group bg-white dark:bg-gray-900 p-6 rounded-3xl shadow-medium dark:shadow-2xl dark:shadow-brand-black/20 transition-all duration-500 ease-out transform hover:-translate-y-2 border border-gray-200/60 dark:border-gray-700/60 flex flex-col h-full text-left ${hasVideo ? 'cursor-pointer' : ''} ${
                 isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-5 scale-95'
             }`}
             style={{ transitionDelay: `${delay}ms` }}
@@ -105,8 +105,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
                 <div className="bg-gradient-to-br from-brand-red to-yellow-500 text-white rounded-xl p-3 inline-flex mb-4 shadow-lg shadow-brand-red/30">
                     {icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
-                <p className="text-gray-600">{description}</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{description}</p>
             </div>
             {hasVideo && (
                 <div className="mt-auto pt-6">
@@ -168,7 +168,7 @@ const Features = () => {
     ];
 
     return (
-        <section id="features" className="py-28 bg-brand-gray">
+        <section id="features" className="py-28 bg-brand-gray dark:bg-brand-black">
             <div className="container mx-auto px-6">
                 <div
                     ref={titleRef}
@@ -177,7 +177,7 @@ const Features = () => {
                     }`}
                 >
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">Công Nghệ Đột Phá, Kết Quả Vượt Trội</h2>
-                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-8 max-w-2xl mx-auto">
                         IELTS Drills kết hợp công nghệ AI tiên tiến và phương pháp học hiện đại để giúp bạn chinh phục mục tiêu.
                     </p>
                 </div>

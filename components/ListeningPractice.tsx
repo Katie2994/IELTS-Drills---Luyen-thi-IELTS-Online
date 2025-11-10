@@ -47,15 +47,15 @@ const ListeningPractice = () => {
     ];
 
     return (
-        <section ref={sectionRef} className="py-28 bg-brand-gray">
+        <section ref={sectionRef} className="py-28 bg-brand-gray dark:bg-brand-black">
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                      {/* Image Column */}
                     <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'}`}>
                         <img 
-                            src="http://drills.vn/wp-content/uploads/2025/11/3.png" 
+                            src="http://drills.vn/wp-content/uploads/2025/11/5-1.png" 
                             alt="Luyện đề thi IELTS Listening trên IELTS Drills" 
-                            className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60"
+                            className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60 dark:border-gray-700/60"
                             loading="lazy"
                         />
                     </div>
@@ -64,7 +64,7 @@ const ListeningPractice = () => {
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
                             Chinh Phục IELTS Listening Với Đề Thi Thật
                         </h2>
-                        <p className="text-base sm:text-lg text-brand-black font-bold mt-6">
+                        <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6">
                            Rèn luyện kỹ năng nghe qua các bài thi mô phỏng kỳ thi thật. Nâng cao khả năng tập trung, nhận biết thông tin chi tiết và làm quen với nhiều giọng đọc khác nhau.
                         </p>
                         
@@ -72,7 +72,7 @@ const ListeningPractice = () => {
                             {features.map((feature, index) => (
                                 <div key={index} className="flex items-start">
                                     <CheckIcon />
-                                    <p className="text-gray-600">{feature.description}</p>
+                                    <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
                                 </div>
                             ))}
                         </div>

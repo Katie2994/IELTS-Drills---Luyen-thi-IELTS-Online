@@ -31,18 +31,18 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, price, period, features
     return (
         <div
             ref={ref}
-            className={`bg-white rounded-3xl p-8 flex flex-col transition-all duration-500 ease-out border ${isPopular ? 'ring-2 ring-brand-red lg:scale-105 shadow-large border-transparent' : 'shadow-medium border-gray-200/60'} ${
+            className={`bg-white dark:bg-gray-900 rounded-3xl p-8 flex flex-col transition-all duration-500 ease-out border ${isPopular ? 'ring-2 ring-brand-red lg:scale-105 shadow-large dark:shadow-2xl dark:shadow-brand-black/20 border-transparent' : 'shadow-medium border-gray-200/60 dark:border-gray-700'} ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5 scale-95'
             }`}
             style={{ transitionDelay: `${delay}ms` }}
         >
             {isPopular && <span className="bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase self-center -mt-11 mb-4">Phổ biến nhất</span>}
-            <h3 className="text-2xl font-bold text-center text-gray-900">{plan}</h3>
+            <h3 className="text-2xl font-bold text-center text-gray-900 dark:text-white">{plan}</h3>
             <div className="text-center my-6">
                 <span className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-yellow-400">{price}</span>
-                <span className="text-gray-600">{period}</span>
+                <span className="text-gray-600 dark:text-gray-400">{period}</span>
             </div>
-            <ul className="space-y-4 mb-8 flex-grow text-gray-700">
+            <ul className="space-y-4 mb-8 flex-grow text-gray-700 dark:text-gray-300">
                 {features.map((feature, index) => (
                     <li key={index} className="flex items-start">
                         <CheckIcon />
@@ -50,7 +50,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, price, period, features
                     </li>
                 ))}
             </ul>
-            <a href="https://ieltsdrills.com/" className={`w-full text-center font-bold py-3 px-8 rounded-xl text-lg transition-all duration-300 transform hover:-translate-y-1 ${isPopular ? 'bg-brand-red text-white hover:bg-red-700 shadow-lg hover:shadow-xl' : 'bg-gray-100 text-brand-black hover:bg-gray-200 shadow-md hover:shadow-lg'}`}>
+            <a href="https://ieltsdrills.com/" className={`w-full text-center font-bold py-3 px-8 rounded-xl text-lg transition-all duration-300 transform hover:-translate-y-1 ${isPopular ? 'bg-brand-red text-white hover:bg-red-700 shadow-lg hover:shadow-xl' : 'bg-gray-100 text-brand-black hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 shadow-md hover:shadow-lg'}`}>
                 Bắt đầu ngay
             </a>
         </div>
@@ -100,7 +100,7 @@ const Pricing = () => {
     ];
 
     return (
-        <section id="pricing" className="py-28 bg-brand-gray">
+        <section id="pricing" className="py-28 bg-brand-gray dark:bg-brand-black">
             <div className="container mx-auto px-6">
                 <div 
                     ref={titleRef}
@@ -109,7 +109,7 @@ const Pricing = () => {
                     }`}
                 >
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">Chọn Gói Học Phù Hợp Với Bạn</h2>
-                    <p className="text-base sm:text-lg text-brand-black font-bold mt-8 max-w-2xl mx-auto">Bắt đầu miễn phí, hoặc khai phá toàn bộ tiềm năng với các gói học cao cấp.</p>
+                    <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-8 max-w-2xl mx-auto">Bắt đầu miễn phí, hoặc khai phá toàn bộ tiềm năng với các gói học cao cấp.</p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-16 lg:gap-8 max-w-5xl mx-auto items-center">
                     {plans.map((p, i) => <PricingCard key={i} {...p} delay={i * 150} />)}
