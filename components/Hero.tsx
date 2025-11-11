@@ -16,8 +16,16 @@ const Hero = () => {
     const contentRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const handleScroll = () => {
+        const handleParallax = () => {
             if (contentRef.current) {
+                // Disable parallax on mobile devices (e.g., screen width <= 768px)
+                if (window.innerWidth <= 768) {
+                    if (contentRef.current.style.transform !== 'translateY(0px)') {
+                        contentRef.current.style.transform = 'translateY(0px)';
+                    }
+                    return;
+                }
+                
                 const offsetY = window.pageYOffset;
                 // Move foreground content down at a fraction of the scroll speed
                 // to make it appear to scroll slower than the background, creating a parallax effect.
@@ -25,8 +33,15 @@ const Hero = () => {
             }
         };
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
+        // Run on mount and on resize to adjust for different screen sizes
+        handleParallax();
+        window.addEventListener('scroll', handleParallax, { passive: true });
+        window.addEventListener('resize', handleParallax, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleParallax);
+            window.removeEventListener('resize', handleParallax);
+        };
     }, []);
 
     return (
