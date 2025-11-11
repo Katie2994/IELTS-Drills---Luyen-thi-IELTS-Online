@@ -17,6 +17,7 @@ import CaseStudy from './components/CaseStudy';
 import TransformationJourney from './components/TransformationJourney';
 import Methodology from './components/Methodology';
 import AboutUs from './components/AboutUs';
+import PlacementTest from './components/PlacementTest';
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -57,8 +58,9 @@ function App() {
         <SpeakingTopics />
         <CaseStudy />
         <TransformationJourney />
-        <LevelChecker />
         <VideoSection />
+        <LevelChecker />
+        <PlacementTest />
         <Testimonials />
         <Pricing />
         <Faq />
