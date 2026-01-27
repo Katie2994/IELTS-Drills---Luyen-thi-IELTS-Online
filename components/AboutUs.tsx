@@ -147,4 +147,24 @@ const AboutUs = () => {
                             
                             <div className="absolute bottom-8 left-8 right-8 text-white">
                                 <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
-                                    <p className="font
+                                    <p className="font-medium text-lg leading-relaxed">
+                                        "Chúng tôi tin rằng công nghệ sinh ra để phục vụ con người, không phải thay thế con người. Tại IELTS Drills, AI là công cụ, còn giáo dục là trái tim."
+                                    </p>
+                                    <div className="mt-4 flex items-center gap-3">
+                                        <div className="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center font-bold">KT</div>
+                                        <div>
+                                            <p className="text-sm font-bold">Cô Kiều Trinh</p>
+                                            <p className="text-xs text-gray-300">Founder IELTS Drills</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default AboutUs;
