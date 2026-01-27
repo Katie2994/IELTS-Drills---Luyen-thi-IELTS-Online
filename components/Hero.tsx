@@ -8,12 +8,12 @@ const Hero = () => {
                 {/* Intro Text */}
                 <div className="mb-10 lg:mb-14 text-center lg:text-left">
                     <p className="text-gray-500 dark:text-gray-400 font-bold mb-2 text-lg uppercase tracking-wide animate-fade-in-down">
-                        Chào mừng đến với IELTS Drills
+                        Hệ sinh thái luyện thi toàn diện
                     </p>
                     <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight animate-fade-in-down" style={{animationDelay: '100ms'}}>
-                        Thư viện IELTS <br className="hidden md:block"/>
+                        Chào mừng đến với <br className="hidden md:block"/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-yellow-500">
-                            Của Riêng Bạn
+                            IELTS Drills
                         </span>
                     </h1>
                 </div>
