@@ -14,18 +14,18 @@ const UsersIcon = () => (
 const values = [
     {
         icon: <LightBulbIcon />,
-        title: "Đổi Mới & Công Nghệ",
-        description: "Luôn tiên phong áp dụng AI để cá nhân hoá lộ trình và tối ưu hiệu quả học tập."
+        title: "Tư Duy Của Người Làm Giáo Dục",
+        description: "Mọi tính năng AI đều được xây dựng dựa trên phương pháp sư phạm, giúp bạn không chỉ học đúng mà còn học sâu."
     },
     {
         icon: <HeartIcon />,
-        title: "Tận Tâm & Chuyên Môn",
-        description: "Đội ngũ chuyên gia IELTS giàu kinh nghiệm luôn sẵn sàng hỗ trợ, đảm bảo chất lượng học thuật cao nhất."
+        title: "Thấu Hiểu & Đồng Hành",
+        description: "Cô Kiều Trinh cùng đội ngũ hiểu rõ từng khó khăn nhỏ nhất của học viên để đưa ra giải pháp khắc phục triệt để."
     },
     {
         icon: <UsersIcon />,
-        title: "Cộng Đồng Gắn Kết",
-        description: "Xây dựng một môi trường học tập tích cực, nơi học viên có thể trao đổi, học hỏi và cùng nhau tiến bộ."
+        title: "Cá Nhân Hoá Tuyệt Đối",
+        description: "Không có lộ trình chung chung. Hệ thống phân tích điểm yếu riêng của bạn để thiết kế bài học phù hợp nhất."
     }
 ];
 
@@ -60,10 +60,13 @@ const AboutUs = () => {
                             style={{ animation: 'blob-animate-2 26s infinite ease-in-out', animationDelay: '1s' }}
                         ></div>
                         <h2 className="relative z-10 text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
-                            Về IELTS Drills: <br />Sứ Mệnh Nâng Tầm Người Việt
+                            IELTS Drills:<br />Sự Kết Hợp Giữa Cái Tâm Giáo Dục & Sức Mạnh Công Nghệ
                         </h2>
                         <p className="relative z-10 text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6">
-                            Chúng tôi không chỉ là một nền tảng luyện thi. IELTS Drills là người đồng hành, được xây dựng bởi đội ngũ chuyên gia tâm huyết, với sứ mệnh mang đến phương pháp học IELTS hiệu quả, thông minh và dễ tiếp cận nhất cho học viên Việt Nam.
+                            "Học IELTS giờ không còn chỉ là 'luyện thi' nữa. Mỗi người đều có nỗi lo riêng."
+                        </p>
+                        <p className="relative z-10 text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                            Đó chính là lý do cô Kiều Trinh - giáo viên với hơn 10 năm kinh nghiệm đứng lớp - đã tạo ra IELTS Drills. Không phải để tạo ra thêm một công cụ vô hồn, mà là một người trợ lý thấu hiểu, giúp bạn vượt qua nỗi sợ không biết bắt đầu từ đâu.
                         </p>
                         <div className="relative z-10 mt-8 space-y-6">
                             {values.map((value, index) => (
@@ -99,6 +102,13 @@ const AboutUs = () => {
                                 className="relative z-10 w-full h-full object-cover rounded-3xl shadow-large border border-gray-200/60 dark:border-gray-700/60 opacity-90 transition-opacity duration-300 hover:opacity-100"
                                 loading="lazy"
                             />
+                            {/* Floating Quote Card */}
+                            <div className="absolute -bottom-6 -left-6 z-20 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 max-w-xs animate-float-1">
+                                <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                                    "Học IELTS không chỉ để thi, mà còn là cách luyện tập thông minh và khai phá tiềm năng bản thân."
+                                </p>
+                                <p className="text-xs text-brand-red font-bold mt-2">- Cô Kiều Trinh</p>
+                            </div>
                         </div>
                     </div>
                 </div>
