@@ -6,7 +6,6 @@ import Features from './components/Features';
 import LevelChecker from './components/LevelChecker';
 import VideoSection from './components/VideoSection';
 import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
 import Faq from './components/Faq';
 import ReadingPractice from './components/ReadingPractice';
 import ListeningPractice from './components/ListeningPractice';
@@ -63,7 +62,6 @@ function App() {
         <LevelChecker />
         <PlacementTest />
         <Testimonials />
-        <Pricing />
         <Faq />
         <AboutUs />
       </main>

@@ -28,7 +28,6 @@ const Footer = () => {
                         <h4 className="font-semibold uppercase tracking-wider text-gray-300 mb-4">Sản phẩm</h4>
                         <ul className="space-y-2">
                             <li><a href="#features" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Tính năng</a></li>
-                            <li><a href="#pricing" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Bảng giá</a></li>
                             <li><a href="#testimonials" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Cảm nhận</a></li>
                             <li><a href="#faq" className="inline-block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-1">Hỏi đáp</a></li>
                         </ul>

@@ -97,7 +97,7 @@ const AboutUs = () => {
                                 style={{ animation: 'blob-animate-2 30s infinite ease-in-out' }}
                             ></div>
                             <img 
-                                src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                                src="https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/610971552_122099442903197617_2885371806561280639_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kT8FlsBaafAQ7kNvwFTvj4C&_nc_oc=AdngzrPTGR7PvD3JMaQ67RaIvvIZs_S1VgKF9jxE81ZPI-OWxdTlgQzBflawxktFnlkfw0EDJDgNITpMYndLLhFE&_nc_zt=23&_nc_ht=scontent-hkg1-1.xx&_nc_gid=z461JesYbvJsPbm6KfPhtg&oh=00_AfobNOm8LZCSxLgWd7DeiKiJ6-AryJ2UingSWdOwBa9sKQ&oe=697E5FE9" 
                                 alt="Đội ngũ IELTS Drills" 
                                 className="relative z-10 w-full h-full object-cover rounded-3xl shadow-large border border-gray-200/60 dark:border-gray-700/60 opacity-90 transition-opacity duration-300 hover:opacity-100"
                                 loading="lazy"

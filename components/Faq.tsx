@@ -80,10 +80,6 @@ const Faq = () => {
         {
             question: "Tôi có thể sử dụng IELTS Drills trên điện thoại không?",
             answer: "Có, trang web của chúng tôi hoàn toàn tương thích và hoạt động mượt mà trên mọi thiết bị, bao gồm máy tính để bàn, máy tính bảng và điện thoại di động. Bạn có thể luyện tập mọi lúc, mọi nơi."
-        },
-        {
-            question: "Sự khác biệt giữa gói Pro và Premium là gì?",
-            answer: "Gói Pro cho phép bạn truy cập không giới hạn vào tất cả các công cụ tự học, bao gồm các bài thi thử và chấm điểm bằng AI. Gói Premium bao gồm tất cả các tính năng của gói Pro, cộng thêm các lớp học trực tuyến và buổi học 1 kèm 1 với chuyên gia."
         }
     ];
 

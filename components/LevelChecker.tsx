@@ -153,8 +153,8 @@ const LevelChecker = () => {
               <div className="bg-gray-50 dark:bg-gray-700/50 rounded-2xl p-6 border border-gray-200 dark:border-gray-600 opacity-0 animate-fade-in-up" style={{ animationDelay: '550ms' }}>
                 <p className="font-bold text-lg text-gray-900 dark:text-white">Gói học đề xuất</p>
                 <p className="text-3xl font-bold my-2 text-brand-black dark:text-gray-200">{result.plan}</p>
-                <a href="#pricing" className="bg-brand-red text-white font-bold py-3 px-8 rounded-xl text-lg hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block mt-4">
-                  Xem chi tiết gói {result.plan}
+                <a href="https://ieltsdrills.com/" className="bg-brand-red text-white font-bold py-3 px-8 rounded-xl text-lg hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block mt-4">
+                  Đăng ký tư vấn gói {result.plan}
                 </a>
               </div>
               
