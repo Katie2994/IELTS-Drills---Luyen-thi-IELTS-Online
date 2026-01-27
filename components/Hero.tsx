@@ -95,8 +95,20 @@ const Hero = () => {
                         <div className="relative z-10 text-center">
                             <h3 className="text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide text-sm mb-2">Kết quả thực tế</h3>
                             <div className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-orange-500 mb-2">90%</div>
-                            <p className="text-gray-900 dark:text-white font-bold text-xl">Học viên đạt Band mục tiêu</p>
-                            <div className="w-full bg-gray-200 dark:bg-gray-600 h-2 rounded-full mt-6 overflow-hidden">
+                            <p className="text-gray-900 dark:text-white font-bold text-lg leading-tight">Học viên đạt Band mục tiêu</p>
+                            
+                            {/* Detail Stats */}
+                            <div className="mt-3 space-y-1">
+                                <p className="text-sm font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700/50 py-1 px-3 rounded-full inline-block">
+                                    <span className="text-brand-red font-bold">300+</span> bạn đạt 6.5+
+                                </p>
+                                <br />
+                                <p className="text-sm font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700/50 py-1 px-3 rounded-full inline-block">
+                                     <span className="text-brand-red font-bold">90+</span> bạn đạt 7.0+
+                                </p>
+                            </div>
+
+                            <div className="w-full bg-gray-200 dark:bg-gray-600 h-1.5 rounded-full mt-5 overflow-hidden">
                                 <div className="bg-brand-red h-full w-[90%] rounded-full animate-slide-in-bottom"></div>
                             </div>
                         </div>
@@ -129,14 +141,16 @@ const Hero = () => {
                                 500+ đề thi Listening & Reading cập nhật liên tục từ các kỳ thi thật.
                             </p>
                              <div className="flex -space-x-2 mb-4">
-                                 {[1,2,3,4].map(i => (
-                                     <div key={i} className="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 border-2 border-white dark:border-gray-800"></div>
+                                 {['L', 'R', 'WT1', 'WT2', 'S', 'P'].map((skill, i) => (
+                                     <div key={i} className="w-8 h-8 rounded-full bg-white dark:bg-gray-700 border-2 border-gray-100 dark:border-gray-600 flex items-center justify-center text-[10px] font-bold text-brand-black dark:text-white shadow-sm z-10 hover:z-20 hover:scale-110 transition-transform cursor-default">
+                                         {skill}
+                                     </div>
                                  ))}
-                                 <div className="w-8 h-8 rounded-full bg-brand-black text-white flex items-center justify-center text-xs font-bold border-2 border-white dark:border-gray-800">+2k</div>
+                                 <div className="w-8 h-8 rounded-full bg-brand-black text-white flex items-center justify-center text-[10px] font-bold border-2 border-white dark:border-gray-800 relative z-0">+2k</div>
                              </div>
                         </div>
                         
-                        <a href="#speaking-topics" className="w-full bg-brand-black text-white font-bold py-3 rounded-xl text-center shadow-lg hover:bg-gray-800 transition-all">
+                        <a href="https://ieltsdrills.com/quiz/category/ielts" className="w-full bg-brand-black text-white font-bold py-3 rounded-xl text-center shadow-lg hover:bg-gray-800 transition-all">
                             Làm bài thi thử
                         </a>
                     </div>
