@@ -1,54 +1,8 @@
-import React, { useState, useEffect } from 'react';
-
-// Video Modal Component specifically for Hero
-const VideoModal = ({ src, onClose }: { src: string, onClose: () => void }) => {
-    useEffect(() => {
-        const handleEsc = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') onClose();
-        };
-        window.addEventListener('keydown', handleEsc);
-        // Prevent background scrolling when modal is open
-        document.body.style.overflow = 'hidden';
-        
-        return () => {
-            window.removeEventListener('keydown', handleEsc);
-            document.body.style.overflow = 'unset';
-        };
-    }, [onClose]);
-
-    return (
-        <div 
-            className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-[9999] p-4 animate-fade-in-up" 
-            onClick={onClose}
-            role="dialog"
-            aria-modal="true"
-        >
-            <div 
-                className="relative w-full max-w-5xl aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/20" 
-                onClick={(e) => e.stopPropagation()}
-            >
-                <video src={src} controls autoPlay className="w-full h-full" playsInline>
-                    Trình duyệt của bạn không hỗ trợ thẻ video.
-                </video>
-                <button 
-                    onClick={onClose}
-                    className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors border border-white/20 backdrop-blur-md"
-                    aria-label="Đóng video"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    );
-};
+import React from 'react';
 
 const Hero = () => {
-    const [isVideoOpen, setIsVideoOpen] = useState(false);
-
     return (
-        <section className="relative hero-gradient-bg text-white overflow-hidden z-10 py-20 lg:py-28 flex items-center">
+        <section className="relative hero-gradient-bg text-white overflow-hidden z-10 py-16 lg:py-24 flex items-center">
             {/* Decorative Blobs - Simplified animation */}
             <div aria-hidden="true" className="blob bg-red-400/20 w-[30rem] h-[30rem] top-[-5%] left-[-5%] animate-pulse"></div>
             <div aria-hidden="true" className="blob bg-yellow-400/10 w-[20rem] h-[20rem] bottom-[10%] right-[10%]"></div>
@@ -76,21 +30,50 @@ const Hero = () => {
                             Không chỉ là app luyện thi. Đây là sự kết hợp giữa <strong>10 năm kinh nghiệm giảng dạy</strong> của Ms. Kiều Trinh và công nghệ AI, giúp bạn học đúng trọng tâm, sửa lỗi tận gốc.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
                             <a href="https://ieltsdrills.com/quiz/category/ielts" className="w-full sm:w-auto bg-white text-brand-red font-bold py-4 px-8 rounded-2xl text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center">
                                 Bắt đầu miễn phí
                             </a>
-                            <button 
-                                onClick={() => setIsVideoOpen(true)}
-                                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-black/20 text-white border border-white/30 font-bold py-4 px-8 rounded-2xl text-lg hover:bg-black/40 transition-all duration-300 backdrop-blur-sm cursor-pointer"
-                            >
+                            <a href="#features" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-black/20 text-white border border-white/30 font-bold py-4 px-8 rounded-2xl text-lg hover:bg-black/40 transition-all duration-300 backdrop-blur-sm cursor-pointer">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 Xem Demo
-                            </button>
+                            </a>
                         </div>
+
+                        {/* Stats & Promo */}
+                        <div className="space-y-6 border-t border-white/10 pt-8">
+                             <div className="grid grid-cols-3 gap-2 md:gap-8 divide-x divide-white/10">
+                                 <div>
+                                     <div className="text-2xl md:text-3xl font-extrabold text-yellow-400">90%+</div>
+                                     <div className="text-xs md:text-sm text-gray-200 mt-1">Học viên đạt band mục tiêu</div>
+                                 </div>
+                                 <div>
+                                     <div className="text-2xl md:text-3xl font-extrabold text-yellow-400">~100%</div>
+                                     <div className="text-xs md:text-sm text-gray-200 mt-1">Học viên hài lòng</div>
+                                 </div>
+                                 <div>
+                                     <div className="text-2xl md:text-3xl font-extrabold text-yellow-400">95%+</div>
+                                     <div className="text-xs md:text-sm text-gray-200 mt-1">Thấy khoá học dễ hiểu</div>
+                                 </div>
+                             </div>
+
+                             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl flex flex-col md:flex-row items-center gap-4 text-left">
+                                <div className="bg-brand-red text-white font-bold px-3 py-1 rounded-lg text-sm whitespace-nowrap shadow-lg shadow-red-900/20">
+                                    TOP 1
+                                </div>
+                                <div className="flex-1">
+                                    <h4 className="font-bold text-white">Khoá học IELTS Writing Task 1</h4>
+                                    <p className="text-sm text-gray-200 opacity-90">Được học viên yêu thích nhất, giúp chinh phục dạng bài khó nhằn.</p>
+                                </div>
+                                <a href="https://ieltsdrills.com/mindmap/placement-test?id=v6XiIZj9A6jnkMtk5paN" className="bg-white text-brand-red font-bold py-2 px-5 rounded-xl text-sm hover:bg-gray-100 transition-colors shadow-md whitespace-nowrap">
+                                    Học thử ngay
+                                </a>
+                             </div>
+                        </div>
+
                     </div>
 
                     {/* Right Column: Simple Visual */}
@@ -121,14 +104,6 @@ const Hero = () => {
 
                 </div>
             </div>
-
-            {/* Video Modal */}
-            {isVideoOpen && (
-                <VideoModal 
-                    src="http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-Writing-Practice.mp4" 
-                    onClose={() => setIsVideoOpen(false)} 
-                />
-            )}
         </section>
     );
 };
