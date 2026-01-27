@@ -1,14 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const PlayIcon = () => (
-    // Replaced with a simple triangle path for better optical centering
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 md:h-12 md:w-12 text-white fill-current ml-1" viewBox="0 0 24 24">
-         <path d="M8 5v14l11-7z" />
+    <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        className="h-10 w-10 md:h-12 md:w-12 text-white fill-current ml-2 -translate-x-[2px]" 
+        viewBox="4 0 24 24"
+    >
+        <path d="M8 5v14l11-7z" />
     </svg>
 );
 
 const ArrowRightIcon = () => (
-    <svg className="h-5 w-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
     </svg>
 );
