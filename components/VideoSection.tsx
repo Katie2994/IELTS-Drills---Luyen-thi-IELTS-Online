@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const PlayIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 md:h-20 md:w-20 text-white" viewBox="0 0 20 20" fill="currentColor">
-        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+    // Replaced with a simple triangle path for better optical centering
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 md:h-12 md:w-12 text-white fill-current ml-1" viewBox="0 0 24 24">
+         <path d="M8 5v14l11-7z" />
     </svg>
 );
 
@@ -60,14 +61,14 @@ const VideoSection = () => {
                     </p>
                 </div>
                 <div 
-                    className={`max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-4xl p-4 shadow-large border border-gray-200/60 dark:border-gray-700/60 transition-all duration-700 ease-out delay-200 ${
+                    className={`max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-4xl p-2 md:p-4 shadow-large border border-gray-200/60 dark:border-gray-700/60 transition-all duration-700 ease-out delay-200 ${
                         isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                     }`}
                 >
-                    <div className="relative rounded-3xl overflow-hidden aspect-video">
+                    <div className="relative rounded-[2rem] overflow-hidden aspect-video">
                         <video
                             ref={videoRef}
-                            className="w-full h-full"
+                            className="w-full h-full object-cover"
                             src={isVisible ? "http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-Writing-Practice.mp4" : undefined}
                             poster="http://drills.vn/wp-content/uploads/2025/11/Writing-Practice-Mode.png"
                             controls={isPlaying}
@@ -82,11 +83,12 @@ const VideoSection = () => {
 
                         {!isPlaying && (
                             <div
-                                className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center cursor-pointer group"
+                                className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer group transition-colors hover:bg-black/30"
                                 onClick={handlePlay}
                                 aria-label="Play video"
                             >
-                                <div className="bg-brand-red/80 p-3 md:p-4 rounded-full transition-all duration-300 group-hover:scale-110 shadow-lg backdrop-blur-sm">
+                                {/* Update Play button style for better centering */}
+                                <div className="bg-brand-red/90 w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center backdrop-blur-sm shadow-floating transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-red">
                                     <PlayIcon />
                                 </div>
                             </div>
@@ -99,7 +101,7 @@ const VideoSection = () => {
                         href="https://ieltsdrills.com/writing-practice/step1"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center justify-center bg-brand-red text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
+                        className="group inline-flex items-center justify-center bg-brand-red text-white font-bold py-4 px-10 rounded-full hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30 text-lg"
                     >
                         Dùng thử ngay
                         <ArrowRightIcon />

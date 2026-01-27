@@ -148,7 +148,7 @@ const TransformationJourney = memo(() => {
             href="https://ieltsdrills.com/quiz/IELTS%20WT1%20-%20Tests/CGcya"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center bg-brand-red text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
+            className="group inline-flex items-center justify-center bg-brand-red text-white font-bold py-4 px-10 rounded-full hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30 text-lg"
           >
             Thử sức viết bài này ngay
             <svg

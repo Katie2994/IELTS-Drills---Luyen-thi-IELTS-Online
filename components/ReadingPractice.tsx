@@ -47,46 +47,58 @@ const ReadingPractice = () => {
     ];
 
     return (
-        <section ref={sectionRef} className="py-28 bg-white dark:bg-gray-900">
-            <div className="container mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    {/* Image Column */}
-                    <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}`}>
-                        <img 
-                            src="http://drills.vn/wp-content/uploads/2025/11/4-1.png" 
-                            alt="Luyện đề thi IELTS Reading trên IELTS Drills" 
-                            className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60 dark:border-gray-700/60"
-                            loading="lazy"
-                        />
-                    </div>
-                    {/* Text Content Column */}
-                    <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'}`} style={{ transitionDelay: '200ms' }}>
-                        <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
-                            Luyện Đề Thi IELTS Reading Miễn Phí
-                        </h2>
-                        <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6">
-                            Thử sức với bộ sưu tập đề thi Reading sát với đề thi thật đã ra. Cải thiện kỹ năng đọc hiểu, quản lý thời gian và làm quen với các dạng câu hỏi khó nhất.
-                        </p>
-                        
-                        <div className="mt-8 space-y-4">
-                            {features.map((feature, index) => (
-                                <div key={index} className="flex items-start">
-                                    <CheckIcon />
-                                    <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
-                                </div>
-                            ))}
+        <section ref={sectionRef} className="py-12 px-4 sm:px-6">
+            <div className="container mx-auto max-w-7xl">
+                {/* Updated container to match Bento style */}
+                <div className="bg-white dark:bg-gray-800 rounded-[2.5rem] p-8 md:p-16 shadow-card border border-gray-100 dark:border-gray-700 overflow-hidden relative">
+                    {/* Background blob */}
+                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-blue-50/50 via-transparent to-transparent dark:from-blue-900/10 dark:to-transparent z-0 pointer-events-none"></div>
+
+                    <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        {/* Image Column */}
+                        <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}`}>
+                            <div className="relative rounded-3xl shadow-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 transform hover:scale-[1.02] transition-transform duration-500">
+                                <img 
+                                    src="http://drills.vn/wp-content/uploads/2025/11/4-1.png" 
+                                    alt="Luyện đề thi IELTS Reading trên IELTS Drills" 
+                                    className="w-full h-auto object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
                         </div>
-                        
-                        <div className="mt-10">
-                            <a
-                                href="https://ieltsdrills.com/quiz/tag/ielts-reading-advanced"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group w-full sm:w-auto inline-flex items-center justify-center bg-brand-red text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
-                            >
-                                Bắt đầu luyện Reading
-                                <ArrowRightIcon />
-                            </a>
+                        {/* Text Content Column */}
+                        <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'}`} style={{ transitionDelay: '200ms' }}>
+                            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold text-sm mb-4">
+                                Kỹ năng Reading
+                            </div>
+                            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">
+                                Luyện Đề Thi IELTS Reading <br/>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Miễn Phí</span>
+                            </h2>
+                            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                                Thử sức với bộ sưu tập đề thi Reading sát với đề thi thật đã ra. Cải thiện kỹ năng đọc hiểu, quản lý thời gian và làm quen với các dạng câu hỏi khó nhất.
+                            </p>
+                            
+                            <div className="space-y-4 mb-10">
+                                {features.map((feature, index) => (
+                                    <div key={index} className="flex items-start p-3 rounded-xl bg-gray-50 dark:bg-gray-700/30 border border-gray-100 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-700 transition-colors">
+                                        <CheckIcon />
+                                        <p className="text-gray-700 dark:text-gray-300 font-medium">{feature.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            
+                            <div>
+                                <a
+                                    href="https://ieltsdrills.com/quiz/tag/ielts-reading-advanced"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group w-full sm:w-auto inline-flex items-center justify-center bg-brand-red text-white font-bold py-4 px-8 rounded-full hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
+                                >
+                                    Bắt đầu luyện Reading
+                                    <ArrowRightIcon />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

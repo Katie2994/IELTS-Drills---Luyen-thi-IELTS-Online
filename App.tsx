@@ -15,7 +15,6 @@ import SpeakingTopics from './components/SpeakingTopics';
 import CaseStudy from './components/CaseStudy';
 import TransformationJourney from './components/TransformationJourney';
 import Methodology from './components/Methodology';
-import AboutUs from './components/AboutUs';
 import PlacementTest from './components/PlacementTest';
 import ZaloButton from './components/ZaloButton';
 
@@ -63,7 +62,6 @@ function App() {
         <PlacementTest />
         <Testimonials />
         <Faq />
-        <AboutUs />
       </main>
       <Footer />
       <ZaloButton />

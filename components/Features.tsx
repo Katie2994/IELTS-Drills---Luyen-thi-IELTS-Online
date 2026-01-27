@@ -161,8 +161,11 @@ const Features = () => {
         <section id="features" className="py-16 md:py-24 px-4 sm:px-6">
             <div className="container mx-auto max-w-7xl">
                 <div className="mb-12 text-center md:text-left">
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">Công Nghệ Đột Phá</h2>
-                    <p className="text-gray-500 mt-4 text-lg max-w-2xl">Khám phá các tính năng giúp bạn đạt kết quả vượt trội.</p>
+                    {/* Fixed: Updated gradient style and added padding-bottom to prevent clipping */}
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-3 leading-tight">
+                        Công Nghệ Đột Phá
+                    </h2>
+                    <p className="text-gray-500 mt-2 text-lg max-w-2xl">Khám phá các tính năng giúp bạn đạt kết quả vượt trội.</p>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

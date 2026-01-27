@@ -34,38 +34,48 @@ const PlacementTest = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-28 bg-white dark:bg-gray-900">
-            <div className="container mx-auto px-6">
-                 <div className="max-w-3xl mx-auto">
-                    <div className={`text-center transition-all duration-700 ease-out ${ isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5' }`}>
-                        <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
-                           Kiểm Tra Trình Độ Toàn Diện Miễn Phí
+        <section ref={sectionRef} className="py-28 px-4 sm:px-6">
+            <div className="container mx-auto max-w-5xl">
+                 {/* Updated container to match Bento style - Centered Card */}
+                 <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-[3rem] p-10 md:p-20 shadow-card border border-gray-100 dark:border-gray-700 text-center relative overflow-hidden">
+                    
+                    {/* Decorative Background Elements */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-red/5 dark:bg-brand-red/10 blur-[80px] rounded-full pointer-events-none"></div>
+
+                    <div className={`relative z-10 transition-all duration-700 ease-out ${ isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5' }`}>
+                        <div className="inline-block px-6 py-2 rounded-full bg-brand-red/10 text-brand-red font-extrabold text-sm uppercase tracking-wider mb-6">
+                            Miễn Phí
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-4 leading-tight">
+                           Kiểm Tra Trình Độ Toàn Diện
                         </h2>
-                        <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6">
+                        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-medium mt-4 max-w-2xl mx-auto leading-relaxed">
                            Đánh giá chính xác trình độ của bạn qua bài thi 4 kỹ năng chuẩn Cambridge. Nhận ngay kết quả chi tiết và lộ trình học được AI cá nhân hoá để bứt phá band điểm.
                         </p>
                         
-                        <ul className="mt-8 space-y-4 text-gray-700 dark:text-gray-400 text-left max-w-lg mx-auto">
-                            <li className="flex items-start">
-                                <CheckIcon />
-                                <span>Bao gồm đầy đủ 4 kỹ năng: Listening, Reading, Writing, Speaking.</span>
-                            </li>
-                             <li className="flex items-start">
-                                <CheckIcon />
-                                <span>AI phân tích điểm mạnh, điểm yếu và đề xuất lộ trình học.</span>
-                            </li>
-                             <li className="flex items-start">
-                                <CheckIcon />
-                                <span>Hoàn toàn miễn phí, không yêu cầu tài khoản.</span>
-                            </li>
-                        </ul>
+                        <div className="mt-10 bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-700 inline-block text-left max-w-xl w-full">
+                            <ul className="space-y-4 text-gray-700 dark:text-gray-300">
+                                <li className="flex items-center">
+                                    <CheckIcon />
+                                    <span className="font-semibold">Bao gồm đầy đủ 4 kỹ năng: Listening, Reading, Writing, Speaking.</span>
+                                </li>
+                                 <li className="flex items-center">
+                                    <CheckIcon />
+                                    <span className="font-semibold">AI phân tích điểm mạnh, điểm yếu và đề xuất lộ trình học.</span>
+                                </li>
+                                 <li className="flex items-center">
+                                    <CheckIcon />
+                                    <span className="font-semibold">Hoàn toàn miễn phí, không yêu cầu tài khoản.</span>
+                                </li>
+                            </ul>
+                        </div>
                         
-                        <div className="mt-10">
+                        <div className="mt-12">
                             <a
                                 href="https://ieltsdrills.com/mindmap/placement-test?id=v6XiIZj9A6jnkMtk5paN"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group inline-flex items-center justify-center bg-brand-red text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
+                                className="group inline-flex items-center justify-center bg-brand-red text-white font-bold py-4 px-12 rounded-full hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30 text-lg"
                             >
                                 Làm bài thi ngay
                                 <ArrowRightIcon />

@@ -47,46 +47,59 @@ const ListeningPractice = () => {
     ];
 
     return (
-        <section ref={sectionRef} className="py-28 bg-brand-gray dark:bg-brand-black">
-            <div className="container mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                     {/* Image Column */}
-                    <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'}`}>
-                        <img 
-                            src="http://drills.vn/wp-content/uploads/2025/11/5-1.png" 
-                            alt="Luyện đề thi IELTS Listening trên IELTS Drills" 
-                            className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60 dark:border-gray-700/60"
-                            loading="lazy"
-                        />
-                    </div>
-                    {/* Text Content Column */}
-                    <div className={`lg:order-first transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}`} style={{ transitionDelay: '200ms' }}>
-                        <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
-                            Chinh Phục IELTS Listening Với Đề Thi Thật
-                        </h2>
-                        <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6">
-                           Rèn luyện kỹ năng nghe qua các bài thi mô phỏng kỳ thi thật. Nâng cao khả năng tập trung, nhận biết thông tin chi tiết và làm quen với nhiều giọng đọc khác nhau.
-                        </p>
-                        
-                        <div className="mt-8 space-y-4">
-                            {features.map((feature, index) => (
-                                <div key={index} className="flex items-start">
-                                    <CheckIcon />
-                                    <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
-                                </div>
-                            ))}
+        <section ref={sectionRef} className="py-4 px-4 sm:px-6">
+            <div className="container mx-auto max-w-7xl">
+                 {/* Updated container to match Bento style */}
+                 <div className="bg-brand-black text-white rounded-[2.5rem] p-8 md:p-16 shadow-card overflow-hidden relative">
+                    {/* Abstract background blobs */}
+                    <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-red/20 blur-[100px] rounded-full"></div>
+                    <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500/20 blur-[100px] rounded-full"></div>
+
+                    <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                         {/* Image Column */}
+                        <div className={`order-2 lg:order-1 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'}`}>
+                            <div className="relative rounded-3xl shadow-2xl overflow-hidden border border-white/10 transform hover:scale-[1.02] transition-transform duration-500">
+                                <img 
+                                    src="http://drills.vn/wp-content/uploads/2025/11/5-1.png" 
+                                    alt="Luyện đề thi IELTS Listening trên IELTS Drills" 
+                                    className="w-full h-auto object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
                         </div>
-                        
-                        <div className="mt-10">
-                            <a
-                                href="https://ieltsdrills.com/quiz/tag/ielts-listening-advanced"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group w-full sm:w-auto inline-flex items-center justify-center bg-brand-red text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
-                            >
-                                Bắt đầu luyện Listening
-                                <ArrowRightIcon />
-                            </a>
+                        {/* Text Content Column */}
+                        <div className={`order-1 lg:order-2 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}`} style={{ transitionDelay: '200ms' }}>
+                            <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white font-bold text-sm mb-4 border border-white/10">
+                                Kỹ năng Listening
+                            </div>
+                            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight">
+                                Chinh Phục IELTS Listening <br/>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-orange-400">Với Đề Thi Thật</span>
+                            </h2>
+                            <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                               Rèn luyện kỹ năng nghe qua các bài thi mô phỏng kỳ thi thật. Nâng cao khả năng tập trung, nhận biết thông tin chi tiết và làm quen với nhiều giọng đọc khác nhau.
+                            </p>
+                            
+                            <div className="space-y-4 mb-10">
+                                {features.map((feature, index) => (
+                                    <div key={index} className="flex items-start p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                        <CheckIcon />
+                                        <p className="text-gray-300 font-medium">{feature.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            
+                            <div>
+                                <a
+                                    href="https://ieltsdrills.com/quiz/tag/ielts-listening-advanced"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group w-full sm:w-auto inline-flex items-center justify-center bg-brand-red text-white font-bold py-4 px-8 rounded-full hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
+                                >
+                                    Bắt đầu luyện Listening
+                                    <ArrowRightIcon />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
