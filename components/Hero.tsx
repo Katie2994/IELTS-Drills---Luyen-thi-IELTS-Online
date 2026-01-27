@@ -66,9 +66,9 @@ const Hero = () => {
                                 </div>
                                 <div className="flex-1">
                                     <h4 className="font-bold text-white">Khoá học IELTS Writing Task 1</h4>
-                                    <p className="text-sm text-gray-200 opacity-90">Được học viên yêu thích nhất, giúp chinh phục dạng bài khó nhằn.</p>
+                                    <p className="text-sm text-gray-200 opacity-90">Kết hợp 10 năm kinh nghiệm của Ms. Kiều Trinh và AI, giúp học đúng trọng tâm, sửa lỗi tận gốc.</p>
                                 </div>
-                                <a href="https://ieltsdrills.com/mindmap/placement-test?id=v6XiIZj9A6jnkMtk5paN" className="bg-white text-brand-red font-bold py-2 px-5 rounded-xl text-sm hover:bg-gray-100 transition-colors shadow-md whitespace-nowrap">
+                                <a href="https://ieltsdrills.com/course/ielts-writing-task-1-academic-jYEXNFSSBqy8viVnxDHS" className="bg-white text-brand-red font-bold py-2 px-5 rounded-xl text-sm hover:bg-gray-100 transition-colors shadow-md whitespace-nowrap">
                                     Học thử ngay
                                 </a>
                              </div>

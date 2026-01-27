@@ -111,9 +111,9 @@ const Methodology = () => {
                                         <span className="bg-yellow-400 text-yellow-900 text-xs font-bold mr-2 px-2.5 py-0.5 rounded-full">TOP 1</span>
                                         Khoá học IELTS Writing Task 1
                                     </h4>
-                                    <p className="text-gray-600 dark:text-yellow-400/80 mt-1 text-sm">Được học viên yêu thích nhất, giúp chinh phục dạng bài khó nhằn.</p>
+                                    <p className="text-gray-600 dark:text-yellow-400/80 mt-1 text-sm">Kết hợp 10 năm kinh nghiệm của Ms. Kiều Trinh và AI, giúp học đúng trọng tâm, sửa lỗi tận gốc.</p>
                                 </div>
-                                <a href="https://ieltsdrills.com/mindmap/placement-test?id=v6XiIZj9A6jnkMtk5paN"
+                                <a href="https://ieltsdrills.com/course/ielts-writing-task-1-academic-jYEXNFSSBqy8viVnxDHS"
                                    target="_blank"
                                    rel="noopener noreferrer"
                                    className="group mt-4 sm:mt-0 flex-shrink-0 inline-flex items-center justify-center bg-yellow-400 text-yellow-900 font-bold py-2.5 px-6 rounded-lg hover:bg-yellow-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap">
