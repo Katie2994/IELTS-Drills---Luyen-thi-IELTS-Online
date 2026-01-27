@@ -62,7 +62,8 @@ const AboutUs = () => {
                             <div className="inline-block px-4 py-1.5 rounded-full bg-brand-red/10 text-brand-red font-bold text-sm mb-6 uppercase tracking-wider">
                                 Về Chúng Tôi
                             </div>
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-4 leading-tight">
+                            {/* Updated line-height to leading-relaxed for better spacing */}
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-4 leading-relaxed">
                                 Sự Kết Hợp Giữa <br/> Cái Tâm Giáo Dục & <br/> Sức Mạnh Công Nghệ
                             </h2>
                             <p className="text-lg sm:text-xl text-brand-black dark:text-gray-200 font-bold mt-4 italic">
@@ -87,8 +88,8 @@ const AboutUs = () => {
                             </div>
                         </div>
 
-                        {/* Image */}
-                        <div className="relative h-full min-h-[400px] lg:min-h-[600px] rounded-[2.5rem] overflow-hidden group">
+                        {/* Image - Forced to Aspect Square */}
+                        <div className="relative w-full aspect-square rounded-[2.5rem] overflow-hidden group shadow-lg border border-gray-100 dark:border-gray-700/50">
                             <img 
                                 src="https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/610971552_122099442903197617_2885371806561280639_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kT8FlsBaafAQ7kNvwFTvj4C&_nc_oc=AdngzrPTGR7PvD3JMaQ67RaIvvIZs_S1VgKF9jxE81ZPI-OWxdTlgQzBflawxktFnlkfw0EDJDgNITpMYndLLhFE&_nc_zt=23&_nc_ht=scontent-hkg1-1.xx&_nc_gid=z461JesYbvJsPbm6KfPhtg&oh=00_AfobNOm8LZCSxLgWd7DeiKiJ6-AryJ2UingSWdOwBa9sKQ&oe=697E5FE9" 
                                 alt="Đội ngũ IELTS Drills" 
