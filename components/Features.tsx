@@ -97,20 +97,22 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, thu
                 </p>
                 
                 <div className="flex flex-wrap items-center gap-3">
-                    <div className="flex items-center gap-2">
-                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20 text-white shadow-lg group-hover:bg-brand-red group-hover:scale-110 transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-0.5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                    {/* Revamped Play Button */}
+                    <div className="flex items-center gap-3 group/play">
+                        <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg group-hover/play:bg-brand-red group-hover/play:border-brand-red group-hover/play:scale-110 transition-all duration-300">
+                             {/* Optical centering: translate-x-0.5 pushes the triangle slightly right to look centered */}
+                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white fill-current translate-x-0.5" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
                             </svg>
                         </div>
-                        <span className="text-white font-bold text-sm tracking-wide opacity-80 group-hover:opacity-100 transition-opacity">Xem Demo</span>
+                        <span className="text-white font-bold text-sm tracking-wide opacity-90 group-hover/play:opacity-100 group-hover/play:text-brand-red transition-all">Xem Demo</span>
                     </div>
 
                     {practiceLink && (
                         <a 
                             href={practiceLink} 
                             onClick={(e) => e.stopPropagation()}
-                            className="flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white text-sm font-bold px-4 py-2 rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                            className="flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white text-sm font-bold px-4 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ml-auto md:ml-2"
                         >
                             <span>Luyện ngay</span>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -161,7 +163,6 @@ const Features = () => {
         <section id="features" className="py-16 md:py-24 px-4 sm:px-6">
             <div className="container mx-auto max-w-7xl">
                 <div className="mb-12 text-center md:text-left">
-                    {/* Fixed: Updated gradient style and added padding-bottom to prevent clipping */}
                     <h2 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-3 leading-tight">
                         Công Nghệ Đột Phá
                     </h2>

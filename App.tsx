@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import AboutUs from './components/AboutUs';
 import SocialProof from './components/SocialProof';
 import Features from './components/Features';
 import LevelChecker from './components/LevelChecker';
@@ -49,6 +50,7 @@ function App() {
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main className="isolate">
         <Hero />
+        <AboutUs />
         <SocialProof />
         <Features />
         <ReadingPractice />
