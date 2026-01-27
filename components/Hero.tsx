@@ -128,7 +128,7 @@ const Hero = () => {
                                 Chinh phục dạng bài biểu đồ với tư duy logic và từ vựng ăn điểm.
                             </p>
                         </div>
-                        <a href="https://ieltsdrills.com/course/ielts-writing-task-1-academic-jYEXNFSSBqy8viVnxDHS" className="mt-6 w-full bg-white dark:bg-gray-800 text-brand-black dark:text-white font-bold py-3 rounded-xl text-center shadow-sm hover:shadow-md transition-all border border-gray-100 dark:border-gray-600">
+                        <a href="https://ieltsdrills.com/course/ielts-writing-task-1-academic-jYEXNFSSBqy8viVnxDHS" className="mt-6 w-full bg-[#ffe36d] hover:bg-[#ffd633] text-brand-black font-bold py-3 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
                             Học thử ngay
                         </a>
                     </div>
@@ -150,7 +150,7 @@ const Hero = () => {
                              </div>
                         </div>
                         
-                        <a href="https://ieltsdrills.com/quiz/category/ielts" className="w-full bg-brand-black text-white font-bold py-3 rounded-xl text-center shadow-lg hover:bg-gray-800 transition-all">
+                        <a href="https://ieltsdrills.com/quiz/category/ielts" className="w-full bg-brand-red text-white font-bold py-3 rounded-xl text-center shadow-lg hover:bg-red-700 transition-all">
                             Làm bài thi thử
                         </a>
                     </div>
