@@ -32,7 +32,7 @@ const Hero = () => {
                                 </div>
                                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
                                 Không chỉ là App luyện thi. <br/>
-                                <span className="text-gray-300">Là người bạn đồng hành tin cậy.</span>
+                                <span className="text-gray-300">Là người bạn đồng hành đáng tin cậy.</span>
                                 </h2>
                                 <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-xl">
                                 Sự giao thoa tinh tế giữa tư duy giáo dục sâu sắc và trí tuệ nhân tạo, giúp bạn thấu hiểu bản chất, khắc phục điểm yếu và bứt phá mọi giới hạn.

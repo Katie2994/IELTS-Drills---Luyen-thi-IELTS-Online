@@ -11,6 +11,52 @@ const UsersIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.125-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.125-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
 );
 
+// New Component for Animated Value Item
+type ValueItemProps = {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+    delay: number;
+};
+
+const ValueItem: React.FC<ValueItemProps> = ({ icon, title, description, delay }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.unobserve(entry.target);
+            }
+        }, { threshold: 0.2 });
+
+        const currentRef = ref.current;
+        if (currentRef) observer.observe(currentRef);
+        return () => {
+            if (currentRef) observer.unobserve(currentRef);
+        };
+    }, []);
+
+    return (
+        <div 
+            ref={ref}
+            className={`flex items-start p-4 rounded-2xl bg-gray-50 dark:bg-gray-900/50 hover:bg-white dark:hover:bg-gray-700 border border-transparent hover:border-gray-200 dark:hover:border-gray-600 shadow-sm hover:shadow-md transition-all duration-700 ease-out transform ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+            }`}
+            style={{ transitionDelay: `${delay}ms` }}
+        >
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-brand-red to-yellow-500 flex items-center justify-center shadow-lg shadow-brand-red/30 text-white">
+                {icon}
+            </div>
+            <div className="ml-5">
+                <h4 className="font-bold text-gray-900 dark:text-white text-lg">{title}</h4>
+                <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm">{description}</p>
+            </div>
+        </div>
+    );
+};
+
 const values = [
     {
         icon: <LightBulbIcon />,
@@ -59,13 +105,16 @@ const AboutUs = () => {
                     <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         {/* Text content */}
                         <div>
-                            <div className="inline-block px-4 py-1.5 rounded-full bg-brand-red/10 text-brand-red font-bold text-sm mb-6 uppercase tracking-wider">
+                            {/* Updated Badge: Bigger text, padding and bold font */}
+                            <div className="inline-block px-6 py-2 rounded-full bg-brand-red/10 text-brand-red font-extrabold text-base mb-6 uppercase tracking-wider">
                                 Về Chúng Tôi
                             </div>
-                            {/* Updated line-height to leading-relaxed for better spacing */}
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-4 leading-relaxed">
+                            
+                            {/* Updated Heading: Increased line-height (leading-loose) for better spacing */}
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-4 leading-loose">
                                 Sự Kết Hợp Giữa <br/> Cái Tâm Giáo Dục & <br/> Sức Mạnh Công Nghệ
                             </h2>
+                            
                             <p className="text-lg sm:text-xl text-brand-black dark:text-gray-200 font-bold mt-4 italic">
                                 "Học IELTS giờ không còn chỉ là 'luyện thi' nữa. Mỗi người đều có nỗi lo riêng."
                             </p>
@@ -73,17 +122,16 @@ const AboutUs = () => {
                                 Đó chính là lý do cô Kiều Trinh - giáo viên với hơn 10 năm kinh nghiệm đứng lớp - đã tạo ra IELTS Drills. Không phải để tạo ra thêm một công cụ vô hồn, mà là một người trợ lý thấu hiểu, giúp bạn vượt qua nỗi sợ không biết bắt đầu từ đâu.
                             </p>
                             
+                            {/* Value Items with Animation */}
                             <div className="mt-10 grid gap-6">
                                 {values.map((value, index) => (
-                                    <div key={index} className="flex items-start p-4 rounded-2xl bg-gray-50 dark:bg-gray-900/50 hover:bg-white dark:hover:bg-gray-700 border border-transparent hover:border-gray-200 dark:hover:border-gray-600 transition-all duration-300 shadow-sm hover:shadow-md">
-                                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-brand-red to-yellow-500 flex items-center justify-center shadow-lg shadow-brand-red/30 text-white">
-                                            {value.icon}
-                                        </div>
-                                        <div className="ml-5">
-                                            <h4 className="font-bold text-gray-900 dark:text-white text-lg">{value.title}</h4>
-                                            <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm">{value.description}</p>
-                                        </div>
-                                    </div>
+                                    <ValueItem 
+                                        key={index}
+                                        icon={value.icon}
+                                        title={value.title}
+                                        description={value.description}
+                                        delay={index * 150} // Staggered delay for cascade effect
+                                    />
                                 ))}
                             </div>
                         </div>
@@ -99,24 +147,4 @@ const AboutUs = () => {
                             
                             <div className="absolute bottom-8 left-8 right-8 text-white">
                                 <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
-                                    <p className="font-medium text-lg leading-relaxed">
-                                        "Chúng tôi tin rằng công nghệ sinh ra để phục vụ con người, không phải thay thế con người. Tại IELTS Drills, AI là công cụ, còn giáo dục là trái tim."
-                                    </p>
-                                    <div className="mt-4 flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center font-bold">KT</div>
-                                        <div>
-                                            <p className="text-sm font-bold">Cô Kiều Trinh</p>
-                                            <p className="text-xs text-gray-300">Founder IELTS Drills</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
-
-export default AboutUs;
+                                    <p className="font
