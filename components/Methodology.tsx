@@ -1,15 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const CheckIcon = () => (
-    <svg className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-    </svg>
-);
-
-const ArrowRightIcon = () => (
-    <svg className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-    </svg>
+    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-4">
+        <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+        </svg>
+    </div>
 );
 
 const Methodology = () => {
@@ -33,91 +29,55 @@ const Methodology = () => {
         };
     }, []);
 
-    const features = [
-        {
-            title: 'Nguồn tài liệu thực tế',
-            description: 'Tiếp cận ngôn ngữ từ những nguồn tài liệu được tuyển chọn thực tế, thú vị, và vừa sức.'
-        },
-        {
-            title: 'Học mà chơi, hiệu quả bất ngờ',
-            description: 'Khoá học Daily Listening sử dụng video Youtube ngắn (dưới 2 phút) giúp việc học không chỉ hiệu quả mà còn đầy hứng thú.'
-        }
-    ];
-
     return (
-        <section ref={sectionRef} className="py-28 bg-white dark:bg-gray-900">
-            <div className="container mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    {/* Image Column */}
-                    <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}`}>
-                        <img 
-                            src="http://drills.vn/wp-content/uploads/2025/11/3.png" 
-                            alt="Khoá học Daily Listening từ video Youtube" 
-                            className="rounded-3xl shadow-large w-full h-auto border border-gray-200/60 dark:border-gray-700/60"
-                            loading="lazy"
-                        />
-                    </div>
-                    {/* Text Content Column */}
-                    <div className={`lg:order-first transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'}`} style={{ transitionDelay: '200ms' }}>
-                        <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">
-                            Phương Pháp Đã Được Kiểm Chứng
-                        </h2>
-                        <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-6">
-                            Các khoá học được thiết kế chuẩn mực, dựa trên nghiên cứu sư phạm và được chứng minh hiệu quả qua sự thành công của hàng ngàn học viên.
-                        </p>
-                        
-                        <div className="mt-8 space-y-6">
-                            {features.map((feature, index) => (
-                                <div key={index} className="flex items-start p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200/80 dark:border-gray-700">
+        <section ref={sectionRef} className="py-12 px-4 sm:px-6">
+            <div className="container mx-auto max-w-7xl">
+                <div className="bg-white dark:bg-gray-800 rounded-[3rem] p-8 md:p-16 shadow-card overflow-hidden relative">
+                    {/* Background blob */}
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-800 dark:via-gray-900 dark:to-black opacity-50 z-0"></div>
+                    
+                    <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        {/* Image Column */}
+                        <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}`}>
+                             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+                                <img 
+                                    src="http://drills.vn/wp-content/uploads/2025/11/3.png" 
+                                    alt="Khoá học Daily Listening" 
+                                    className="w-full h-auto object-cover"
+                                />
+                             </div>
+                        </div>
+
+                        {/* Text Content Column */}
+                        <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'}`} style={{ transitionDelay: '200ms' }}>
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
+                                Phương Pháp <br/>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-orange-500">Đã Được Kiểm Chứng</span>
+                            </h2>
+                            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                                Không chỉ là lý thuyết suông. Các khoá học được thiết kế dựa trên nghiên cứu sư phạm và thực tế giảng dạy hàng ngàn giờ.
+                            </p>
+                            
+                            <div className="space-y-6 mb-10">
+                                <div className="flex items-start">
                                     <CheckIcon />
                                     <div>
-                                        <h4 className="font-bold text-gray-900 dark:text-white text-lg">{feature.title}</h4>
-                                        <p className="text-gray-600 dark:text-gray-400 mt-1">{feature.description}</p>
+                                        <h4 className="font-bold text-gray-900 dark:text-white text-lg">Nguồn tài liệu thực tế</h4>
+                                        <p className="text-gray-500 dark:text-gray-400 mt-1">Học từ báo chí, video, podcast thay vì giáo trình khô khan.</p>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                        
-                        <div className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-700">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-200/80 dark:border-gray-700">
-                                    <p className="text-3xl font-extrabold text-brand-red">90%+</p>
-                                    <p className="text-gray-600 dark:text-gray-400 font-semibold mt-1 text-sm">Học viên đạt band mục tiêu</p>
-                                </div>
-                                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-200/80 dark:border-gray-700">
-                                    <p className="text-3xl font-extrabold text-brand-red">~100%</p>
-                                    <p className="text-gray-600 dark:text-gray-400 font-semibold mt-1 text-sm">Học viên hài lòng</p>
-                                </div>
-                                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-200/80 dark:border-gray-700">
-                                    <p className="text-3xl font-extrabold text-brand-red">95%+</p>
-                                    <p className="text-gray-600 dark:text-gray-400 font-semibold mt-1 text-sm">Thấy khoá học dễ hiểu</p>
+                                <div className="flex items-start">
+                                    <CheckIcon />
+                                    <div>
+                                        <h4 className="font-bold text-gray-900 dark:text-white text-lg">Học mà chơi (Edutainment)</h4>
+                                        <p className="text-gray-500 dark:text-gray-400 mt-1">Daily Listening với video ngắn dưới 2 phút giúp duy trì hứng thú.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="mt-10 space-y-6">
-                            <a
-                                href="https://ieltsdrills.com/quiz/tag/daily-listening"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group w-full inline-flex items-center justify-center bg-brand-red text-white font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
-                            >
-                                Học thử Daily Listening
-                                <ArrowRightIcon />
-                            </a>
-                            <div className="p-4 bg-yellow-50 dark:bg-yellow-900/20 border-2 border-yellow-200 dark:border-yellow-500/30 rounded-2xl shadow-soft text-center sm:text-left sm:flex items-center justify-between gap-4">
-                                <div>
-                                    <h4 className="font-bold text-gray-900 dark:text-yellow-200 text-lg">
-                                        <span className="bg-yellow-400 text-yellow-900 text-xs font-bold mr-2 px-2.5 py-0.5 rounded-full">TOP 1</span>
-                                        Khoá học IELTS Writing Task 1
-                                    </h4>
-                                    <p className="text-gray-600 dark:text-yellow-400/80 mt-1 text-sm">Kết hợp 10 năm kinh nghiệm của Ms. Kiều Trinh và AI, giúp học đúng trọng tâm, sửa lỗi tận gốc.</p>
-                                </div>
-                                <a href="https://ieltsdrills.com/course/ielts-writing-task-1-academic-jYEXNFSSBqy8viVnxDHS"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="group mt-4 sm:mt-0 flex-shrink-0 inline-flex items-center justify-center bg-yellow-400 text-yellow-900 font-bold py-2.5 px-6 rounded-lg hover:bg-yellow-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap">
-                                   Học thử ngay
+                            
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <a href="https://ieltsdrills.com/quiz/tag/daily-listening" className="bg-brand-black dark:bg-white text-white dark:text-brand-black font-bold py-3.5 px-8 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all text-center">
+                                    Học thử Daily Listening
                                 </a>
                             </div>
                         </div>

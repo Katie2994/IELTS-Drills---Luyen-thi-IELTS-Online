@@ -1,16 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Video Modal Component
+// Reusing VideoModal logic
 const VideoModal = ({ src, onClose }: { src: string, onClose: () => void }) => {
     useEffect(() => {
-        const handleEsc = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                onClose();
-            }
-        };
+        const handleEsc = (event: KeyboardEvent) => { if (event.key === 'Escape') onClose(); };
         window.addEventListener('keydown', handleEsc);
         document.body.style.overflow = 'hidden';
-
         return () => {
             window.removeEventListener('keydown', handleEsc);
             document.body.style.overflow = 'unset';
@@ -18,185 +13,132 @@ const VideoModal = ({ src, onClose }: { src: string, onClose: () => void }) => {
     }, [onClose]);
 
     return (
-        <div 
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-[999] p-4 animate-fade-in-up" 
-            style={{ animationDuration: '300ms' }}
-            onClick={onClose}
-            aria-modal="true"
-            role="dialog"
-        >
-            <div className="bg-brand-black rounded-2xl shadow-large w-full max-w-4xl aspect-video relative" onClick={(e) => e.stopPropagation()}>
-                <video src={src} controls autoPlay className="w-full h-full rounded-2xl" playsInline>
-                    Trình duyệt của bạn không hỗ trợ thẻ video.
-                </video>
-                <button 
-                    onClick={onClose}
-                    className="absolute -top-3 -right-3 w-10 h-10 bg-white rounded-full text-brand-black flex items-center justify-center text-2xl font-bold shadow-lg hover:scale-110 transition-transform"
-                    aria-label="Đóng video"
-                >
-                    &times;
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-[9999] p-4" onClick={onClose}>
+            <div className="w-full max-w-5xl aspect-video rounded-3xl overflow-hidden shadow-2xl relative bg-black" onClick={(e) => e.stopPropagation()}>
+                <video src={src} controls autoPlay className="w-full h-full" playsInline>Browser not supported.</video>
+                <button onClick={onClose} className="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/40 backdrop-blur rounded-full flex items-center justify-center text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </div>
         </div>
     );
 };
 
-const SmallPlayIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
-        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-    </svg>
-);
-
-
-// FIX: Define a props type for FeatureCard for better type safety and consistency.
 type FeatureCardProps = {
-    icon: React.ReactNode;
     title: string;
     description: string;
-    delay?: number;
+    icon: React.ReactNode;
+    thumbnail: string;
     videoSrc?: string;
-    posterSrc?: string;
     onWatchDemo?: (src: string) => void;
+    bookCount: string;
 };
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, delay = 0, videoSrc, posterSrc, onWatchDemo }) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.unobserve(entry.target);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        const currentRef = ref.current;
-        if (currentRef) {
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            if (currentRef) {
-                observer.unobserve(currentRef);
-            }
-        };
-    }, []);
-    
-    const hasVideo = videoSrc && onWatchDemo && posterSrc;
-
+const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, thumbnail, videoSrc, onWatchDemo, bookCount }) => {
     return (
-        <div
-            ref={ref}
-            onClick={hasVideo ? () => onWatchDemo(videoSrc) : undefined}
-            role={hasVideo ? "button" : undefined}
-            tabIndex={hasVideo ? 0 : undefined}
-            onKeyDown={hasVideo ? (e) => { if (e.key === 'Enter' || e.key === ' ') onWatchDemo(videoSrc!); } : undefined}
-            aria-label={hasVideo ? `Xem demo cho ${title}` : undefined}
-            className={`group bg-white dark:bg-gray-900 p-6 rounded-3xl shadow-medium dark:shadow-2xl dark:shadow-brand-black/20 transition-all duration-500 ease-out transform hover:-translate-y-2 border border-gray-200/60 dark:border-gray-700/60 flex flex-col h-full text-left ${hasVideo ? 'cursor-pointer' : ''} ${
-                isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-5 scale-95'
-            }`}
-            style={{ transitionDelay: `${delay}ms` }}
+        <div 
+            className={`group relative overflow-hidden rounded-[2.5rem] bg-gray-900 p-8 min-h-[360px] flex flex-col justify-between transition-all duration-500 hover:shadow-floating hover:-translate-y-2 cursor-pointer isolate`}
+            onClick={() => videoSrc && onWatchDemo && onWatchDemo(videoSrc)}
         >
-            <div>
-                <div className="bg-gradient-to-br from-brand-red to-yellow-500 text-white rounded-xl p-3 inline-flex mb-4 shadow-lg shadow-brand-red/30">
+            {/* Background Thumbnail */}
+            <div className="absolute inset-0 z-0">
+                <img 
+                    src={thumbnail} 
+                    alt={title} 
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-brand-black/30"></div>
+            </div>
+            
+            {/* Top Section */}
+            <div className="relative z-10 flex justify-between items-start">
+                <div className="bg-white/10 backdrop-blur-md p-3 rounded-2xl shadow-sm text-white border border-white/20">
                     {icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{description}</p>
-            </div>
-            {hasVideo && (
-                <div className="mt-auto pt-6">
-                    <div className="relative rounded-2xl overflow-hidden aspect-video shadow-inner group-hover:shadow-lg transition-shadow">
-                        <img src={posterSrc} alt={`Demo for ${title}`} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-colors group-hover:bg-black/20">
-                             <div className="bg-brand-red/80 p-2 rounded-full transition-transform duration-300 group-hover:scale-110 backdrop-blur-sm ring-4 ring-white/20">
-                                <SmallPlayIcon />
-                             </div>
-                        </div>
-                    </div>
+                <div className="bg-brand-red text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                    {bookCount}
                 </div>
-            )}
+            </div>
+
+            {/* Content Section */}
+            <div className="relative z-10 mt-auto">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight group-hover:text-yellow-400 transition-colors">
+                    {title}
+                </h3>
+                <p className="text-gray-200 font-medium line-clamp-2 text-sm md:text-base leading-relaxed opacity-90 mb-4">
+                    {description}
+                </p>
+                
+                <div className="flex items-center text-sm font-bold text-white group-hover:translate-x-2 transition-transform">
+                    <span>Xem video demo</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+            </div>
+
+             {/* Play Button Overlay Effect */}
+             <div className="absolute inset-0 z-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                 <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full border border-white/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    </svg>
+                 </div>
+             </div>
         </div>
     );
 };
 
 const Features = () => {
-    const [titleVisible, setTitleVisible] = useState(false);
     const [modalVideo, setModalVideo] = useState<string | null>(null);
-    const titleRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                setTitleVisible(true);
-                observer.unobserve(entry.target);
-            }
-        }, { threshold: 0.1 });
-        const currentRef = titleRef.current;
-        if (currentRef) observer.observe(currentRef);
-        return () => {
-            if (currentRef) observer.unobserve(currentRef);
-        };
-    }, []);
-
-    const featureList = [
+    const features = [
         {
-            icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>,
-            title: 'Chấm Điểm Writing & Phản Hồi AI',
-            description: 'Nhận góp ý chi tiết cho bài Viết từ AI, phân tích sâu theo 4 tiêu chí chấm thi thật để cải thiện nhanh chóng.',
+            title: 'Chấm Điểm Writing',
+            description: 'AI phân tích sâu theo 4 tiêu chí chấm thi thật, giúp bạn nhận ra lỗi sai.',
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>,
+            thumbnail: 'http://drills.vn/wp-content/uploads/2025/11/Writing-Practice-Mode.png',
             videoSrc: 'http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-Submit-Writing-Task-2-final.mp4',
-            posterSrc: 'http://drills.vn/wp-content/uploads/2025/11/6-1.png'
+            bookCount: 'Writing AI'
         },
         {
-            icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>,
-            title: 'Luyện Nói Tự Tin Cùng AI',
-            description: 'Thực hành Speaking với các chủ đề đa dạng, nhận phản hồi tức thì về phát âm, lưu loát và từ vựng.',
+            title: 'Luyện Nói Cùng AI',
+            description: 'Thực hành Speaking không giới hạn chủ đề. Feedback phát âm tức thì.',
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>,
+            thumbnail: 'http://drills.vn/wp-content/uploads/2025/11/7.png',
             videoSrc: 'http://drills.vn/wp-content/uploads/2025/11/Speaking-Practice-Mode-Demo.mp4',
-            posterSrc: 'http://drills.vn/wp-content/uploads/2025/11/11.png'
+            bookCount: 'Speaking'
         },
         {
-            icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>,
-            title: 'Thi Thử & Luyện Từ Vựng Chuyên Sâu',
-            description: 'Làm quen áp lực thi thật và luyện từ vựng chuyên sâu ngay khi làm bài Reading & Listening.',
+            title: 'Thi Thử Online',
+            description: 'Giao diện chuẩn thi máy. Kho đề khổng lồ giúp bạn vững tâm lý.',
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>,
+            thumbnail: 'http://drills.vn/wp-content/uploads/2025/11/4-1.png',
             videoSrc: 'http://drills.vn/wp-content/uploads/2025/11/IELTS-Drills-Reading-0911.mp4',
-            posterSrc: 'http://drills.vn/wp-content/uploads/2025/11/4-1.png'
+            bookCount: 'Exam'
         }
     ];
 
     return (
-        <section id="features" className="py-28 bg-brand-gray dark:bg-brand-black">
-            <div className="container mx-auto px-6">
-                <div
-                    ref={titleRef}
-                    className={`text-center mb-16 transition-all duration-700 ease-out ${
-                        titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-                    }`}
-                >
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-brand-red to-yellow-500 pb-2">Công Nghệ Đột Phá, Kết Quả Vượt Trội</h2>
-                    <p className="text-base sm:text-lg text-brand-black dark:text-gray-300 font-bold mt-8 max-w-2xl mx-auto">
-                        IELTS Drills kết hợp công nghệ AI tiên tiến và phương pháp học hiện đại để giúp bạn chinh phục mục tiêu.
-                    </p>
+        <section id="features" className="py-16 md:py-24 px-4 sm:px-6">
+            <div className="container mx-auto max-w-7xl">
+                <div className="mb-12">
+                    <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">Công Nghệ Đột Phá</h2>
+                    <p className="text-gray-500 mt-2 text-lg">Khám phá các tính năng giúp bạn đạt kết quả vượt trội.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {featureList.map((feature, index) => (
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    {features.map((feature, index) => (
                         <FeatureCard 
-                            key={index} 
-                            icon={feature.icon} 
-                            title={feature.title} 
-                            description={feature.description} 
-                            delay={index * 150}
-                            videoSrc={feature.videoSrc}
-                            posterSrc={feature.posterSrc}
+                            key={index}
+                            {...feature}
                             onWatchDemo={setModalVideo}
-                         />
+                        />
                     ))}
                 </div>
             </div>
-             {modalVideo && <VideoModal src={modalVideo} onClose={() => setModalVideo(null)} />}
+            {modalVideo && <VideoModal src={modalVideo} onClose={() => setModalVideo(null)} />}
         </section>
     );
 };
