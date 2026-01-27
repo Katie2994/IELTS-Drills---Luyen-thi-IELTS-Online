@@ -37,7 +37,7 @@ const Hero = () => {
                                 <span className="text-gray-300">Là người bạn đồng hành tin cậy.</span>
                              </h2>
                              <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-xl">
-                                Kết hợp phương pháp giảng dạy sâu sát và công nghệ AI để giúp bạn học đúng trọng tâm, sửa lỗi tận gốc.
+                                Sự giao thoa tinh tế giữa tư duy giáo dục sâu sắc và trí tuệ nhân tạo, giúp bạn thấu hiểu bản chất, khắc phục điểm yếu và bứt phá mọi giới hạn.
                              </p>
                          </div>
 
@@ -70,13 +70,13 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                         </div>
 
-                        {/* Floating Info Cards */}
-                        <div className="absolute top-6 left-6 z-20">
-                             <div className="bg-white/90 dark:bg-black/60 backdrop-blur-md p-3 rounded-2xl shadow-lg border border-white/20 flex items-center gap-3 animate-float-1">
-                                 <div className="bg-brand-red text-white font-bold p-2 rounded-lg text-xs">10+ Năm</div>
+                        {/* Floating Info Cards - RESIZED SMALLER */}
+                        <div className="absolute top-4 left-4 z-20">
+                             <div className="bg-white/90 dark:bg-black/60 backdrop-blur-md p-2 rounded-xl shadow-lg border border-white/20 flex items-center gap-2 animate-float-1">
+                                 <div className="bg-brand-red text-white font-bold px-2 py-1 rounded-md text-[10px]">10+ Năm</div>
                                  <div>
-                                     <p className="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase">Kinh nghiệm</p>
-                                     <p className="text-sm font-bold text-gray-900 dark:text-white">Giảng dạy & Đào tạo</p>
+                                     <p className="text-[10px] text-gray-500 dark:text-gray-400 font-semibold uppercase leading-tight">Kinh nghiệm</p>
+                                     <p className="text-xs font-bold text-gray-900 dark:text-white leading-tight">Giảng dạy & Đào tạo</p>
                                  </div>
                              </div>
                         </div>
