@@ -18,6 +18,7 @@ import TransformationJourney from './components/TransformationJourney';
 import Methodology from './components/Methodology';
 import AboutUs from './components/AboutUs';
 import PlacementTest from './components/PlacementTest';
+import ZaloButton from './components/ZaloButton';
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -67,6 +68,7 @@ function App() {
         <AboutUs />
       </main>
       <Footer />
+      <ZaloButton />
       <ScrollToTopButton />
     </div>
   );
