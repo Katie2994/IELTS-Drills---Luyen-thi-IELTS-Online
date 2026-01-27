@@ -56,7 +56,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, thu
     return (
         <div 
             ref={ref}
-            className={`group relative overflow-hidden rounded-[2.5rem] bg-gray-900 border border-white/5 h-[400px] flex flex-col justify-end transition-all duration-700 ease-out hover:shadow-2xl hover:scale-[1.02] cursor-pointer isolate ${
+            className={`group relative overflow-hidden rounded-[2.5rem] bg-gray-900 border border-white/5 h-[450px] flex flex-col justify-end transition-all duration-700 ease-out hover:shadow-2xl hover:scale-[1.02] cursor-pointer isolate ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{ transitionDelay: `${delay}ms` }}
@@ -70,7 +70,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, thu
                     className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-all duration-700 group-hover:scale-110" 
                 />
                 {/* Modern Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
                 {/* Red Glow on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"></div>
             </div>
@@ -92,27 +92,38 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, thu
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight group-hover:text-yellow-400 transition-colors">
                     {title}
                 </h3>
-                <p className="text-gray-300 font-medium text-sm md:text-base leading-relaxed mb-6 line-clamp-2 group-hover:text-white transition-colors">
+                <p className="text-gray-300 font-medium text-sm md:text-base leading-relaxed mb-8 line-clamp-2 group-hover:text-white transition-colors">
                     {description}
                 </p>
                 
-                <div className="flex flex-wrap items-center gap-3">
-                    {/* Revamped Play Button */}
-                    <div className="flex items-center gap-3 group/play">
-                        <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg group-hover/play:bg-brand-red group-hover/play:border-brand-red group-hover/play:scale-110 transition-all duration-300">
-                             {/* Optical centering: translate-x-0.5 pushes the triangle slightly right to look centered */}
-                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white fill-current translate-x-0.5" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                    {/* Revamped Play Button - UI Mới */}
+                    <div className="group/play flex items-center gap-4 select-none transition-all duration-300">
+                        <div className="relative w-14 h-14 flex-shrink-0">
+                            {/* Outer Glow Ring (Pulse) */}
+                            <div className="absolute inset-0 rounded-full border border-white/30 opacity-100 scale-100 group-hover/play:scale-125 group-hover/play:opacity-0 transition-all duration-1000 ease-out"></div>
+                             <div className="absolute inset-0 rounded-full border border-white/30 opacity-100 scale-100 group-hover/play:scale-150 group-hover/play:opacity-0 transition-all duration-1000 ease-out delay-100"></div>
+
+                            {/* Main Button */}
+                            <div className="relative w-full h-full rounded-full bg-white/10 backdrop-blur-xl border border-white/30 flex items-center justify-center transition-all duration-300 group-hover/play:bg-brand-red group-hover/play:border-brand-red group-hover/play:shadow-[0_0_20px_rgba(216,41,46,0.6)]">
+                                {/* Icon - Optically centered */}
+                                <svg className="w-5 h-5 text-white fill-current translate-x-[2px]" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
                         </div>
-                        <span className="text-white font-bold text-sm tracking-wide opacity-90 group-hover/play:opacity-100 group-hover/play:text-brand-red transition-all">Xem Demo</span>
+                        
+                        <div className="flex flex-col">
+                            <span className="text-white font-bold text-base leading-none mb-1 group-hover/play:text-brand-red transition-colors">Xem Video</span>
+                            <span className="text-white/50 text-xs font-medium uppercase tracking-wider">Demo Tính Năng</span>
+                        </div>
                     </div>
 
                     {practiceLink && (
                         <a 
                             href={practiceLink} 
                             onClick={(e) => e.stopPropagation()}
-                            className="flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white text-sm font-bold px-4 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ml-auto md:ml-2"
+                            className="flex items-center gap-2 bg-white/10 hover:bg-brand-red border border-white/20 hover:border-brand-red text-white text-sm font-bold px-5 py-3 rounded-full transition-all shadow-sm hover:shadow-lg hover:-translate-y-0.5 backdrop-blur-md"
                         >
                             <span>Luyện ngay</span>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
